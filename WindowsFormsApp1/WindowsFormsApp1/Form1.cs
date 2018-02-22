@@ -40,6 +40,7 @@ namespace WindowsFormsApp1
             this.WindowState = FormWindowState.Minimized;
         }
 
+
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
             if (mouseDown)
