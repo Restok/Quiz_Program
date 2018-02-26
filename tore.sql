@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 23, 2018 at 06:04 AM
+-- Generation Time: Feb 26, 2018 at 09:59 PM
 -- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.2
+-- PHP Version: 7.2.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -77,6 +77,25 @@ INSERT INTO `questions` (`id`, `category`, `question`, `answer_A`, `answer_B`, `
 (30, 'Math', 'What is 50*20?', '100', '200', '50', '25', 1, 'Multiplication'),
 (31, 'Math', 'What is 81*10?', '81', '8100', '810', '8.1', 1, 'Multiplication');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`) VALUES
+(1, 'Jane Doe', 'RzjR9731');
+
 --
 -- Indexes for dumped tables
 --
@@ -87,6 +106,13 @@ INSERT INTO `questions` (`id`, `category`, `question`, `answer_A`, `answer_B`, `
 ALTER TABLE `questions`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `question` (`question`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- AUTO_INCREMENT for dumped tables
