@@ -7,10 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+        SignUp SignUpBox = new SignUp();
         public Form1()
         {
             InitializeComponent();
@@ -51,5 +53,11 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void signUp_Click(object sender, EventArgs e)
+        {
+            SignUpBox.Show();   
+        }
+
+        string connstring = "datasource = localhost; port = 3306; username = root; password =; database = tore";
     }
 }
