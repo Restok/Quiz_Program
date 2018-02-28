@@ -7,37 +7,103 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using MySql.Data.MySqlClient;
 namespace WindowsFormsApp1
 {
+
     public partial class SignUp : Form
     {
+        private MySqlConnection conn;
+        private string server;
+        private string database;
+        private string uid;
+        private string password;
         public SignUp()
         {
+            server = "localhost";
+            database = "tore";
+            uid = "root";
+            password = "";
+
+            string connString;
+            connString = $"SERVER={server};DATABASE{database};UID={uid}; PASSWORD = {password};";
+            connString = "server =localhost; username = root; password =; database = tore";
+
+            conn = new MySqlConnection(connString);
+
             InitializeComponent();
         }
+        private void query()
+        {
 
+            }
         private void label1_Click(object sender, EventArgs e)
         {
             this.Hide();
         }
+        public bool Register(string user, string pass, string email) {
 
+            string query = $"INSERT INTO users (id, username, password, email) VALUES ('', '{user}', '{pass}', '{email}')";
+            try {
+                if (OpenConnection())
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                    catch (Exception ex)
+                    {
+                        return false;
+                    }
+                }
+                else {
+                    conn.Close();
+                    return false;
+                    }
+            }
+            
+            catch(Exception ex)
+            {
+                conn.Close();
+                return false;
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             string userNameText = textBox1.Text;
             string passwordText = textBox2.Text;
             string gmailText = textBox3.Text;
-            if(userNameText == null || passwordText == null || gmailText == null)
+            if(userNameText == "" || passwordText == "" || gmailText == "")
             {
                 warning.Visible = true;
+                Success.Visible = false;
             }
             else
             {
                 warning.Visible = false;
                 Success.Visible = true;
+                Register(userNameText, passwordText, gmailText);
+
+
             }
 
-
         }
+        private bool OpenConnection()
+        {
+            try
+            {
+                conn.Open();
+                return true;
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Connection not opened");
+                return false;
+            }
+        }
+
     }
 }

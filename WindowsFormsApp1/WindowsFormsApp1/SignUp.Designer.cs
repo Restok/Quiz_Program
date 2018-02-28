@@ -30,6 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Success = new System.Windows.Forms.Label();
+            this.warning = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,8 +39,6 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.warning = new System.Windows.Forms.Label();
-            this.Success = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,6 +70,30 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(488, 303);
             this.panel1.TabIndex = 1;
+            // 
+            // Success
+            // 
+            this.Success.AutoSize = true;
+            this.Success.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Success.ForeColor = System.Drawing.Color.YellowGreen;
+            this.Success.Location = new System.Drawing.Point(162, 13);
+            this.Success.Name = "Success";
+            this.Success.Size = new System.Drawing.Size(173, 16);
+            this.Success.TabIndex = 8;
+            this.Success.Text = "Sucess! You can now log in.";
+            this.Success.Visible = false;
+            // 
+            // warning
+            // 
+            this.warning.AutoSize = true;
+            this.warning.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.warning.ForeColor = System.Drawing.Color.Maroon;
+            this.warning.Location = new System.Drawing.Point(137, 13);
+            this.warning.Name = "warning";
+            this.warning.Size = new System.Drawing.Size(235, 16);
+            this.warning.TabIndex = 7;
+            this.warning.Text = "One or more fields needs to be filled in";
+            this.warning.Visible = false;
             // 
             // button1
             // 
@@ -142,35 +166,11 @@
             this.textBox1.Size = new System.Drawing.Size(294, 27);
             this.textBox1.TabIndex = 0;
             // 
-            // warning
-            // 
-            this.warning.AutoSize = true;
-            this.warning.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.warning.ForeColor = System.Drawing.Color.Maroon;
-            this.warning.Location = new System.Drawing.Point(137, 13);
-            this.warning.Name = "warning";
-            this.warning.Size = new System.Drawing.Size(235, 16);
-            this.warning.TabIndex = 7;
-            this.warning.Text = "One or more fields needs to be filled in";
-            this.warning.Visible = false;
-            // 
-            // Success
-            // 
-            this.Success.AutoSize = true;
-            this.Success.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Success.ForeColor = System.Drawing.Color.YellowGreen;
-            this.Success.Location = new System.Drawing.Point(162, 13);
-            this.Success.Name = "Success";
-            this.Success.Size = new System.Drawing.Size(173, 16);
-            this.Success.TabIndex = 8;
-            this.Success.Text = "Sucess! You can now log in.";
-            this.Success.Visible = false;
-            // 
             // SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(617, 384);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);

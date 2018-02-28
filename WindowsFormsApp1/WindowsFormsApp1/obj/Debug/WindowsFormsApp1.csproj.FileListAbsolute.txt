@@ -20,3 +20,15 @@ C:\Users\Code\Documents\GitHub\Quiz_Program\WindowsFormsApp1\WindowsFormsApp1\ob
 C:\Users\Code\Documents\GitHub\Quiz_Program\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\MySql.Data.dll
 C:\Users\Code\Documents\GitHub\Quiz_Program\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\MySql.Data.xml
 C:\Users\Code\Documents\GitHub\Quiz_Program\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.SignUp.resources
+C:\Users\IcyCream\Documents\GitHub\Quiz_Program\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\IcyCream\Documents\GitHub\Quiz_Program\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\IcyCream\Documents\GitHub\Quiz_Program\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\IcyCream\Documents\GitHub\Quiz_Program\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\MySql.Data.xml
+C:\Users\IcyCream\Documents\GitHub\Quiz_Program\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojResolveAssemblyReference.cache
+C:\Users\IcyCream\Documents\GitHub\Quiz_Program\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\IcyCream\Documents\GitHub\Quiz_Program\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\IcyCream\Documents\GitHub\Quiz_Program\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.SignUp.resources
+C:\Users\IcyCream\Documents\GitHub\Quiz_Program\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.Cache
+C:\Users\IcyCream\Documents\GitHub\Quiz_Program\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\IcyCream\Documents\GitHub\Quiz_Program\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\IcyCream\Documents\GitHub\Quiz_Program\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
