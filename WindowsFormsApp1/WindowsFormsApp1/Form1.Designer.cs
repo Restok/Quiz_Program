@@ -40,6 +40,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.incorrectLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -83,10 +84,11 @@
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(580, 445);
+            this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(224, 37);
+            this.textBox1.Size = new System.Drawing.Size(224, 41);
             this.textBox1.TabIndex = 3;
             // 
             // label1
@@ -115,11 +117,13 @@
             // 
             this.textBox2.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(145, 92);
+            this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(224, 37);
+            this.textBox2.Size = new System.Drawing.Size(224, 39);
             this.textBox2.TabIndex = 5;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // signUp
             // 
@@ -153,6 +157,7 @@
             this.button1.TabIndex = 8;
             this.button1.Text = "Login";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label5
             // 
@@ -173,6 +178,18 @@
             this.panel2.Size = new System.Drawing.Size(418, 222);
             this.panel2.TabIndex = 10;
             // 
+            // incorrectLabel
+            // 
+            this.incorrectLabel.AutoSize = true;
+            this.incorrectLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.incorrectLabel.ForeColor = System.Drawing.Color.Red;
+            this.incorrectLabel.Location = new System.Drawing.Point(479, 374);
+            this.incorrectLabel.Name = "incorrectLabel";
+            this.incorrectLabel.Size = new System.Drawing.Size(325, 25);
+            this.incorrectLabel.TabIndex = 11;
+            this.incorrectLabel.Text = "Incorrect username or password!";
+            this.incorrectLabel.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -181,6 +198,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.Controls.Add(this.incorrectLabel);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.signUp);
@@ -214,6 +232,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label incorrectLabel;
     }
 }
 

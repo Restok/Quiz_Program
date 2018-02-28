@@ -14,19 +14,10 @@ namespace WindowsFormsApp1
     public partial class SignUp : Form
     {
         private MySqlConnection conn;
-        private string server;
-        private string database;
-        private string uid;
-        private string password;
         public SignUp()
         {
-            server = "localhost";
-            database = "tore";
-            uid = "root";
-            password = "";
 
             string connString;
-            connString = $"SERVER={server};DATABASE{database};UID={uid}; PASSWORD = {password};";
             connString = "server =localhost; username = root; password =; database = tore";
 
             conn = new MySqlConnection(connString);
