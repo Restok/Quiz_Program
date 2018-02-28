@@ -33,10 +33,6 @@ namespace WindowsFormsApp1
 
             InitializeComponent();
         }
-        private void query()
-        {
-
-            }
         private void label1_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -56,10 +52,12 @@ namespace WindowsFormsApp1
                     }
                     catch (Exception ex)
                     {
+                        MessageBox.Show("error running query");
                         return false;
                     }
                 }
                 else {
+                    MessageBox.Show("Connection not opened!");
                     conn.Close();
                     return false;
                     }
@@ -67,6 +65,7 @@ namespace WindowsFormsApp1
             
             catch(Exception ex)
             {
+                MessageBox.Show("error!");
                 conn.Close();
                 return false;
             }
@@ -76,7 +75,8 @@ namespace WindowsFormsApp1
             string userNameText = textBox1.Text;
             string passwordText = textBox2.Text;
             string gmailText = textBox3.Text;
-            if(userNameText == "" || passwordText == "" || gmailText == "")
+
+            if (userNameText == "" || passwordText == "" || gmailText == "")
             {
                 warning.Visible = true;
                 Success.Visible = false;
@@ -85,7 +85,14 @@ namespace WindowsFormsApp1
             {
                 warning.Visible = false;
                 Success.Visible = true;
-                Register(userNameText, passwordText, gmailText);
+                if (Register(userNameText, passwordText, gmailText))
+                {
+                    MessageBox.Show($"User {userNameText} has been created");
+                }
+                else
+                {
+                    MessageBox.Show($"User not created!");
+                }
 
 
             }
