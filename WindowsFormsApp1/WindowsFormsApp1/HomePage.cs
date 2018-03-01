@@ -46,6 +46,88 @@ namespace WindowsFormsApp1
             this.WindowState = FormWindowState.Minimized;
         }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+/*        private void hover1_MouseHover(object sender, EventArgs e)
+        {
+            MessageBox.Show("Hovering!");
+        }
+*/
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox1.Visible = false;
+            pictureBox5.Visible = true;
+        }
+
+        private void pictureBox5_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox5.Visible = false;
+            pictureBox1.Visible = true;
+        }
+
+        private void pictureBox1_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox5.Visible = false;
+            pictureBox1.Visible = true;
+        }
+
+        private void pictureBox6_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox2.Visible = false;
+            pictureBox6.Visible = true;
+        }
+
+        private void pictureBox6_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox6.Visible = false;
+            pictureBox2.Visible = true;
+        }
+
+        private void pictureBox2_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox6.Visible = false;
+            pictureBox2.Visible = true;
+        }
+
+        private void pictureBox2_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox2.Visible = false;
+            pictureBox6.Visible = true;
+        }
+
+        private void pictureBox7_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox7_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox3.Visible = false;
+            pictureBox7.Visible = true;
+        }
+
+        private void pictureBox3_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox7.Visible = false;
+            pictureBox3.Visible = true;
+        }
+
+        private void pictureBox3_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox3.Visible = false;
+            pictureBox7.Visible = true;
+        }
+
         private void label2_Click(object sender, EventArgs e)
     {
             this.Close();
