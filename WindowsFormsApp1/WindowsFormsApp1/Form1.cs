@@ -123,6 +123,11 @@ namespace WindowsFormsApp1
             textBox2.PasswordChar = '*';
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private bool OpenConnection()
         {
             try
