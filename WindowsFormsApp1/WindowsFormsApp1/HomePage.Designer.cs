@@ -200,15 +200,15 @@
             this.welcomeText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.welcomeText.AutoSize = true;
             this.welcomeText.Font = new System.Drawing.Font("Neo Sans", 71.99999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.welcomeText.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.welcomeText.Location = new System.Drawing.Point(324, 306);
+            this.welcomeText.Location = new System.Drawing.Point(0, 143);
             this.welcomeText.Name = "welcomeText";
-            this.welcomeText.Size = new System.Drawing.Size(656, 116);
+            this.welcomeText.Size = new System.Drawing.Size(1280, 116);
             this.welcomeText.TabIndex = 13;
-            this.welcomeText.Text = "Welcome, user";
-            this.welcomeText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.welcomeText.Text = ".";
+            this.welcomeText.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.welcomeText.Click += new System.EventHandler(this.welcomeText_Click);
             // 
             // HomePage
             // 
@@ -242,7 +242,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

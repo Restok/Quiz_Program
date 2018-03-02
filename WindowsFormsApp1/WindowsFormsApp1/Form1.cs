@@ -15,6 +15,7 @@ namespace WindowsFormsApp1
         private MySqlConnection conn;
         SignUp SignUpBox = new SignUp();
         HomePage homepage = new HomePage();
+        public static string user;
         public Form1()
         {
             string connString;
@@ -103,7 +104,7 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string user = textBox1.Text;
+            user = textBox1.Text;
             string pass = textBox2.Text;
             if (IsLogin(user, pass))
             {

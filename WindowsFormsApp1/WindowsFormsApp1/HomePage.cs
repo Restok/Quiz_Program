@@ -12,7 +12,6 @@ namespace WindowsFormsApp1
 {
     public partial class HomePage : Form
     {
-        Form1 lgin = new Form1();
         public HomePage()
         {
             InitializeComponent();
@@ -139,8 +138,14 @@ namespace WindowsFormsApp1
 
         private void HomePage_Load(object sender, EventArgs e)
         {
-            string user = lgin.textBox1.Text;
+            string user = Form1.user;
+            welcomeText.AutoSize = false;
             welcomeText.Text = $"Welcome, {user}";
+        }
+
+        private void welcomeText_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void label2_Click(object sender, EventArgs e)
