@@ -81,12 +81,6 @@ namespace WindowsFormsApp1
             pictureBox1.Visible = true;
         }
 
-        private void pictureBox6_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox2.Visible = false;
-            pictureBox6.Visible = true;
-        }
-
         private void pictureBox6_MouseHover(object sender, EventArgs e)
         {
             pictureBox6.Visible = false;
@@ -107,13 +101,8 @@ namespace WindowsFormsApp1
 
         private void pictureBox7_MouseHover(object sender, EventArgs e)
         {
-
-        }
-
-        private void pictureBox7_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox3.Visible = false;
-            pictureBox7.Visible = true;
+            pictureBox7.Visible = false;
+            pictureBox3.Visible = true;
         }
 
         private void pictureBox3_MouseHover(object sender, EventArgs e)
@@ -126,6 +115,37 @@ namespace WindowsFormsApp1
         {
             pictureBox3.Visible = false;
             pictureBox7.Visible = true;
+        }
+
+        private void pictureBox8_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox8.Visible = false;
+            pictureBox4.Visible = true;
+        }
+
+
+        private void pictureBox4_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox8.Visible = false;
+            pictureBox4.Visible = true;
+        }
+
+        private void pictureBox4_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox4.Visible = false;
+            pictureBox8.Visible = true;
+        }
+
+        private void HomePage_Load(object sender, EventArgs e)
+        {
+            string user = Form1.user;
+            welcomeText.AutoSize = false;
+            welcomeText.Text = $"Welcome, {user}";
+        }
+
+        private void welcomeText_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void label2_Click(object sender, EventArgs e)

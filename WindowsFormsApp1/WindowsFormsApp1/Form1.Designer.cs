@@ -129,6 +129,7 @@
             // 
             this.signUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.signUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.signUp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.signUp.FlatAppearance.BorderSize = 0;
             this.signUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signUp.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -146,6 +147,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -210,6 +212,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -224,7 +227,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox2;
@@ -233,6 +235,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label incorrectLabel;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
