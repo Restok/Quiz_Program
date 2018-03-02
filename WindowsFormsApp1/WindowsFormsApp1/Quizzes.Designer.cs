@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class HomePage
+    partial class Quizzes
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomePage));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Quizzes));
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -40,7 +40,8 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.welcomeText = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -195,28 +196,28 @@
             this.pictureBox5.TabStop = false;
             this.pictureBox5.MouseHover += new System.EventHandler(this.pictureBox5_MouseHover);
             // 
-            // welcomeText
+            // panel2
             // 
-            this.welcomeText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.welcomeText.Font = new System.Drawing.Font("Microsoft Sans Serif", 71.99999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.welcomeText.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.welcomeText.Location = new System.Drawing.Point(0, 131);
-            this.welcomeText.Name = "welcomeText";
-            this.welcomeText.Size = new System.Drawing.Size(1280, 116);
-            this.welcomeText.TabIndex = 13;
-            this.welcomeText.Text = ".";
-            this.welcomeText.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.welcomeText.Click += new System.EventHandler(this.welcomeText_Click);
+            this.panel2.Location = new System.Drawing.Point(697, 215);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(288, 288);
+            this.panel2.TabIndex = 12;
             // 
-            // HomePage
+            // panel3
+            // 
+            this.panel3.Location = new System.Drawing.Point(274, 215);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(288, 288);
+            this.panel3.TabIndex = 13;
+            // 
+            // Quizzes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(1280, 720);
-            this.Controls.Add(this.welcomeText);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
@@ -228,7 +229,7 @@
             this.Controls.Add(this.pictureBox8);
             this.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "HomePage";
+            this.Name = "Quizzes";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.HomePage_Load);
             this.panel1.ResumeLayout(false);
@@ -258,6 +259,7 @@
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Label welcomeText;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
     }
 }
