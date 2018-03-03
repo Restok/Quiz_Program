@@ -18,7 +18,7 @@ namespace WindowsFormsApp1
         {
 
             string connString;
-            connString = "server =localhost; username = root; password =; database = tore";
+            connString = "server = den1.mysql1.gear.host; username = toredatabase; password =c-production; database = toredatabase";
 
             conn = new MySqlConnection(connString);
 
@@ -103,5 +103,9 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void SignUp_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

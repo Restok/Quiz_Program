@@ -136,13 +136,6 @@ namespace WindowsFormsApp1
             pictureBox8.Visible = true;
         }
 
-        private void HomePage_Load(object sender, EventArgs e)
-        {
-            string user = Form1.user;
-            welcomeText.AutoSize = false;
-            welcomeText.Text = $"Welcome, {user}";
-        }
-
         private void welcomeText_Click(object sender, EventArgs e)
         {
 

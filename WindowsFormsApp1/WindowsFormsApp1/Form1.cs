@@ -15,11 +15,12 @@ namespace WindowsFormsApp1
         private MySqlConnection conn;
         SignUp SignUpBox = new SignUp();
         HomePage homepage = new HomePage();
+        QuestionsForm questionspage = new QuestionsForm();
         public static string user;
         public Form1()
         {
             string connString;
-            connString = "server =localhost; username = root; password =; database = tore";
+            connString = "server = den1.mysql1.gear.host; username = toredatabase; password =c-production; database = toredatabase";
 
             conn = new MySqlConnection(connString);
             InitializeComponent();
@@ -110,7 +111,7 @@ namespace WindowsFormsApp1
             {
                 incorrectLabel.Visible = false;
 
-                homepage.Show();
+                questionspage.Show();
                 this.Hide();
             }
             else
