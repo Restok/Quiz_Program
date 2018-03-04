@@ -149,16 +149,19 @@ namespace WindowsFormsApp1
             {
                 bunifuTransition1.HideSync(Sub1);
                 bunifuTransition2.ShowSync(Sub2);
+                label1.Text = "Science";
             }
             else if(Sub1.Visible == false && Sub3.Visible == false)
             {
                 bunifuTransition1.HideSync(Sub2);
                 bunifuTransition2.Show(Sub3);
+                label1.Text = "History";
             }
             else
             {
                 bunifuTransition2.HideSync(Sub3);
                 bunifuTransition1.ShowSync(Sub1);
+                label1.Text = "Math";
             }
         }
 
@@ -168,17 +171,40 @@ namespace WindowsFormsApp1
             {
                 bunifuTransition1.HideSync(Sub1);
                 bunifuTransition2.ShowSync(Sub3);
+                label1.Text = "History";
             }
             else if (Sub1.Visible == false && Sub3.Visible == false)
             {
                 bunifuTransition1.HideSync(Sub2);
                 bunifuTransition2.Show(Sub1);
+                label1.Text = "Math";
             }
             else
             {
                 bunifuTransition2.HideSync(Sub3);
                 bunifuTransition1.ShowSync(Sub2);
+                label1.Text = "Science";
             }
+        }
+
+        private void Sub3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This Subject is currently locked!");
+        }
+
+        private void Sub2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This subject is currentlt locked!");
+        }
+
+        private void Sub1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void label2_Click(object sender, EventArgs e)
