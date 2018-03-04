@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
+
     public partial class HomePage : Form
     {
+        Quizzes quizpage = new Quizzes();
         public HomePage()
         {
             InitializeComponent();
@@ -56,10 +58,6 @@ namespace WindowsFormsApp1
             MessageBox.Show("Hovering!");
         }
 */
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
 
 
 
@@ -146,6 +144,16 @@ namespace WindowsFormsApp1
         private void welcomeText_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            quizpage.Show();
+            this.Hide();
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
         }
 
         private void label2_Click(object sender, EventArgs e)

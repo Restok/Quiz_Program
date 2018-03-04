@@ -12,6 +12,7 @@ namespace WindowsFormsApp1
 {
     public partial class Quizzes : Form
     {
+        string switches = "Sub";
         public Quizzes()
         {
             InitializeComponent();
@@ -58,7 +59,8 @@ namespace WindowsFormsApp1
 */
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Form1.homepage.Show();
         }
 
 
@@ -139,6 +141,44 @@ namespace WindowsFormsApp1
         private void welcomeText_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            if (Sub2.Visible == false && Sub3.Visible == false)
+            {
+                bunifuTransition1.HideSync(Sub1);
+                bunifuTransition2.ShowSync(Sub2);
+            }
+            else if(Sub1.Visible == false && Sub3.Visible == false)
+            {
+                bunifuTransition1.HideSync(Sub2);
+                bunifuTransition2.Show(Sub3);
+            }
+            else
+            {
+                bunifuTransition2.HideSync(Sub3);
+                bunifuTransition1.ShowSync(Sub1);
+            }
+        }
+
+        private void bunifuImageButton2_Click(object sender, EventArgs e)
+        {
+            if (Sub2.Visible == false && Sub3.Visible == false)
+            {
+                bunifuTransition1.HideSync(Sub1);
+                bunifuTransition2.ShowSync(Sub3);
+            }
+            else if (Sub1.Visible == false && Sub3.Visible == false)
+            {
+                bunifuTransition1.HideSync(Sub2);
+                bunifuTransition2.Show(Sub1);
+            }
+            else
+            {
+                bunifuTransition2.HideSync(Sub3);
+                bunifuTransition1.ShowSync(Sub2);
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)

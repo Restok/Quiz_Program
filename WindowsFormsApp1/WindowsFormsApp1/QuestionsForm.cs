@@ -163,7 +163,6 @@ namespace WindowsFormsApp1
             button2.Text = choiceB;
             button3.Text = choiceC;
             button4.Text = choiceD;
-
         }
         private void QuestionsForm_Load(object sender, EventArgs e)
         {
@@ -183,7 +182,9 @@ namespace WindowsFormsApp1
             if(currentQuestionNumber < 16){
                 if (chosen.Text == correctAnswer)
                 {
-                    animator1.ShowSync(pictureBox4);
+                    bunifuTransition1.ShowSync(pictureBox4);
+                    Thread.Sleep(1500);
+                    bunifuTransition1.HideSync(pictureBox4);
                     correctCount += 1;
                     setQuestionValues();
                     questionBox.Text = getQuestion();
@@ -191,7 +192,9 @@ namespace WindowsFormsApp1
 
                 }
                 else {
-                    animator1.ShowSync(pictureBox4);
+                    bunifuTransition1.ShowSync(pictureBox5);
+                    Thread.Sleep(1500);
+                    bunifuTransition1.HideSync(pictureBox5);
                     missedCount += 1;
                     questionBox.Text = getQuestion();
                     setLabels();
@@ -234,11 +237,6 @@ namespace WindowsFormsApp1
         private void button4_Click(object sender, EventArgs e)
         {
             checkCorrect(button4);
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-
         }
 
         private bool OpenConnection()
