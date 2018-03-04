@@ -36,3 +36,4 @@ C:\Users\IcyCream\Documents\GitHub\Quiz_Program\WindowsFormsApp1\WindowsFormsApp
 C:\Users\Code\Documents\GitHub\Quiz_Program\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.HomePage.resources
 C:\Users\IcyCream\Documents\GitHub\Quiz_Program\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.QuestionsForm.resources
 C:\Users\IcyCream\Documents\GitHub\Quiz_Program\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Quizzes.resources
+C:\Users\IcyCream\Documents\GitHub\Quiz_Program\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Animator.dll

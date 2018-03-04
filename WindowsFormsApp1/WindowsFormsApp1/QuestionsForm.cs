@@ -5,9 +5,11 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using AnimatorNS;
 namespace WindowsFormsApp1
 {
     public partial class QuestionsForm : Form
@@ -21,10 +23,10 @@ namespace WindowsFormsApp1
         string Subject;
         string Details;
         string currentQuestion;
-        int currentQuestionNumber;
+        double currentQuestionNumber;
         int totalQuestionNumber;
-        int correctCount;
-        int missedCount;
+        double correctCount;
+        double missedCount;
         Random rnd = new Random();
         int index;
         List<string> questionsBank = new List<string>();
@@ -165,6 +167,7 @@ namespace WindowsFormsApp1
         }
         private void QuestionsForm_Load(object sender, EventArgs e)
         {
+
             currentQuestionNumber = 1;
             totalQuestionNumber = 15;
             Subject = "Math";
@@ -177,18 +180,27 @@ namespace WindowsFormsApp1
         private void checkCorrect(Button chosen) {
 
             currentQuestionNumber += 1;
-            if (chosen.Text == correctAnswer)
-            {
-                correctCount += 1;
-                setQuestionValues();
-                questionBox.Text = getQuestion();
-                setLabels();
+            if(currentQuestionNumber < 16){
+                if (chosen.Text == correctAnswer)
+                {
+                    animator1.ShowSync(pictureBox4);
+                    correctCount += 1;
+                    setQuestionValues();
+                    questionBox.Text = getQuestion();
+                    setLabels();
+
+                }
+                else {
+                    animator1.ShowSync(pictureBox4);
+                    missedCount += 1;
+                    questionBox.Text = getQuestion();
+                    setLabels();
+                    setQuestionValues();
+                }
             }
-            else {
-                missedCount += 1;
-                questionBox.Text = getQuestion();
-                setLabels();
-                setQuestionValues();
+            else
+            {
+                MessageBox.Show("Quiz end!");
             }
         }
         private void button1_Click(object sender, EventArgs e)
@@ -222,6 +234,11 @@ namespace WindowsFormsApp1
         private void button4_Click(object sender, EventArgs e)
         {
             checkCorrect(button4);
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
         }
 
         private bool OpenConnection()
