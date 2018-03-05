@@ -20,8 +20,8 @@ namespace WindowsFormsApp1
         string choiceD;
         string AnswerText;
         string correctAnswer;
-        string Subject;
-        string Details;
+        public static string Subject;
+        public static string Details;
         string currentQuestion;
         double currentQuestionNumber;
         int totalQuestionNumber;
@@ -169,8 +169,6 @@ namespace WindowsFormsApp1
 
             currentQuestionNumber = 1;
             totalQuestionNumber = 15;
-            Subject = "Math";
-            Details = "Addition";
             getQuestionBank(Subject, Details);
             questionBox.Text = getQuestion();
             setLabels();

@@ -199,12 +199,62 @@ namespace WindowsFormsApp1
 
         private void Sub1_Click(object sender, EventArgs e)
         {
-
+            bunifuTransition3.ShowSync(panel3);
         }
 
         private void label8_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            bunifuTransition4.HideSync(panel3);
+        }
+
+        private void bunifuImageButton3_Click(object sender, EventArgs e)
+        {
+            QuestionsForm.Subject = "Math";
+            QuestionsForm.Details = "Addition";
+            this.Hide();
+            Form1.questionspage.Show();
+        }
+
+        private void bunifuImageButton4_Click(object sender, EventArgs e)
+        {
+            QuestionsForm.Subject = "Math";
+            QuestionsForm.Details = "Subtraction";
+            this.Hide();
+            Form1.questionspage.Show();
+        }
+
+        private void bunifuImageButton7_Click(object sender, EventArgs e)
+        {
+            QuestionsForm.Subject = "Math";
+            QuestionsForm.Details = "Multiplication";
+            this.Hide();
+            Form1.questionspage.Show();
+        }
+
+        private void bunifuImageButton6_Click(object sender, EventArgs e)
+        {
+            QuestionsForm.Subject = "Math";
+            QuestionsForm.Details = "Division";
+            this.Hide();
+            Form1.questionspage.Show();
+        }
+
+        private void bunifuImageButton5_Click(object sender, EventArgs e)
+        {
+            QuestionsForm.Subject = "Math";
+            QuestionsForm.Details = "Powers";
+            this.Hide();
+            Form1.questionspage.Show();
         }
 
         private void label2_Click(object sender, EventArgs e)

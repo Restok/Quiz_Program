@@ -15,7 +15,7 @@ namespace WindowsFormsApp1
         private MySqlConnection conn;
         SignUp SignUpBox = new SignUp();
         public static HomePage homepage = new HomePage();
-        QuestionsForm questionspage = new QuestionsForm();
+        public static QuestionsForm questionspage = new QuestionsForm();
         public static string user;
         public Form1()
         {
@@ -111,7 +111,7 @@ namespace WindowsFormsApp1
             {
                 incorrectLabel.Visible = false;
 
-                questionspage.Show();
+                homepage.Show();
                 this.Hide();
             }
             else
