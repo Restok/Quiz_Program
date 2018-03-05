@@ -111,7 +111,7 @@ namespace WindowsFormsApp1
             {
                 incorrectLabel.Visible = false;
 
-                homepage.Show();
+                questionspage.Show();
                 this.Hide();
             }
             else
