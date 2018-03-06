@@ -95,7 +95,7 @@ def powers():
     r1 = random.randint(1, 1000)
 
     r2 = random.randint(0, 3)
-    correctanswer = r1^r2
+    correctanswer = r1**r2
     possibleanswers = []
     domain = set(correctanswer+x for x in range(-100, 100))
     domain.discard(correctanswer)  # make sure you don't select the correct one
@@ -123,40 +123,6 @@ def squareroot():
     print(f"('', 'Math', 'What is the squareroot of {r2}?', '{correctanswer}','{a}', '{b}', '{c}', '{d}', 'Powers'),")  
     sqltext.write(f"('', 'Math', 'What is the squareroot of {r2}?', '{correctanswer}','{a}', '{b}', '{c}', '{d}', 'Powers'),")
 
-subtraction()
-
-print('\n\n')
-sqltext.write('\n\n')
-
-sqltext.write("INSERT INTO `toredatabase`.`questions` (`id`, `category`, `question`, `Correct_Answer`, `answer_A`, `answer_B`, `answer_C`, `answer_D`, `Details`) VALUES")
-print("INSERT INTO `toredatabase`.`questions` (`id`, `category`, `question`, `Correct_Answer`, `answer_A`, `answer_B`, `answer_C`, `answer_D`, `Details`) VALUES")
-
-multiplication()
-
-print('\n\n')
-sqltext.write('\n\n')
-
-sqltext.write("INSERT INTO `toredatabase`.`questions` (`id`, `category`, `question`, `Correct_Answer`, `answer_A`, `answer_B`, `answer_C`, `answer_D`, `Details`) VALUES")
-print("INSERT INTO `toredatabase`.`questions` (`id`, `category`, `question`, `Correct_Answer`, `answer_A`, `answer_B`, `answer_C`, `answer_D`, `Details`) VALUES")
-
-division()
-
-entries = 50
-
-print('\n\n')
-sqltext.write('\n\n')
-
-sqltext.write("INSERT INTO `toredatabase`.`questions` (`id`, `category`, `question`, `Correct_Answer`, `answer_A`, `answer_B`, `answer_C`, `answer_D`, `Details`) VALUES")
-print("INSERT INTO `toredatabase`.`questions` (`id`, `category`, `question`, `Correct_Answer`, `answer_A`, `answer_B`, `answer_C`, `answer_D`, `Details`) VALUES")
-
 powers()
-
-print('\n\n')
-sqltext.write('\n\n')
-
-sqltext.write("INSERT INTO `toredatabase`.`questions` (`id`, `category`, `question`, `Correct_Answer`, `answer_A`, `answer_B`, `answer_C`, `answer_D`, `Details`) VALUES")
-print("INSERT INTO `toredatabase`.`questions` (`id`, `category`, `question`, `Correct_Answer`, `answer_A`, `answer_B`, `answer_C`, `answer_D`, `Details`) VALUES")
-
 squareroot()
-
 

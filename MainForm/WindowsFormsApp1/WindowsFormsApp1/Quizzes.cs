@@ -194,7 +194,7 @@ namespace WindowsFormsApp1
 
         private void Sub2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This subject is currentlt locked!");
+            MessageBox.Show("This subject is currently locked!");
         }
 
         private void Sub1_Click(object sender, EventArgs e)
@@ -254,7 +254,16 @@ namespace WindowsFormsApp1
             QuestionsForm.Subject = "Math";
             QuestionsForm.Details = "Powers";
             this.Hide();
+        }
+
+        private void bunifuThinButton21_Click(object sender, EventArgs e)
+        {
             Form1.questionspage.Show();
+        }
+
+        private void bunifuThinButton22_Click(object sender, EventArgs e)
+        {
+           
         }
 
         private void label2_Click(object sender, EventArgs e)
