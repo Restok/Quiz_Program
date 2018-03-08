@@ -13,7 +13,7 @@ namespace WindowsFormsApp1
 
     public partial class HomePage : Form
     {
-        Quizzes quizpage = new Quizzes();
+        public static Quizzes quizpage = new Quizzes();
         public HomePage()
         {
             InitializeComponent();
@@ -154,6 +154,11 @@ namespace WindowsFormsApp1
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void label2_Click(object sender, EventArgs e)

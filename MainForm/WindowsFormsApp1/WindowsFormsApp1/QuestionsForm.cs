@@ -201,7 +201,50 @@ namespace WindowsFormsApp1
             }
             else
             {
-                MessageBox.Show("Quiz end!");
+                if (chosen.Text == correctAnswer)
+                {
+                    bunifuTransition1.ShowSync(pictureBox4);
+                    Thread.Sleep(1500);
+                    bunifuTransition1.HideSync(pictureBox4);
+                    correctCount += 1;
+                    setQuestionValues();
+                    recordScore();
+                }
+                else
+                {
+                    bunifuTransition1.ShowSync(pictureBox5);
+                    Thread.Sleep(1500);
+                    bunifuTransition1.HideSync(pictureBox5);
+                    missedCount += 1;
+                    setQuestionValues();
+                    recordScore();
+                }
+                MessageBox.Show("Quiz End!");
+                this.Hide();
+                Form1.homepage.Show();
+
+            }
+        }
+        private void recordScore()
+        {
+            if (OpenConnection())
+            {
+                string currentUser = Form1.user;
+                string query = $"INSERT INTO scores (id, user, {Details}) VALUES ('', '{currentUser}', '{percentage}')";
+                MySqlCommand insertScore = new MySqlCommand(query, conn);
+                try
+                {
+                    insertScore.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("error running query" + ex);
+                }
+                conn.Close();
+            }
+            else
+            {
+                MessageBox.Show("Connection not opened!");
             }
         }
         private void button1_Click(object sender, EventArgs e)
@@ -210,7 +253,10 @@ namespace WindowsFormsApp1
         }
 
         private void setQuestionValues() {
-            questionCount.Text = $"{currentQuestionNumber.ToString()}/{totalQuestionNumber.ToString()}";
+            if (currentQuestionNumber != 16)
+            {
+                questionCount.Text = $"{currentQuestionNumber.ToString()}/{totalQuestionNumber.ToString()}";
+            }
             correctNum.Text = $"{correctCount.ToString()}/{(currentQuestionNumber-1).ToString()}";
             if (currentQuestionNumber - 1 == 0)
             {

@@ -53,3 +53,4 @@ C:\Users\Code\Documents\GitHub\Quiz_Program\MainForm\WindowsFormsApp1\WindowsFor
 C:\Users\Code\Documents\GitHub\Quiz_Program\MainForm\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.Cache
 C:\Users\Code\Documents\GitHub\Quiz_Program\MainForm\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\Code\Documents\GitHub\Quiz_Program\MainForm\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\Code\Documents\GitHub\Quiz_Program\MainForm\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.StatsPage.resources

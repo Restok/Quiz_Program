@@ -122,7 +122,10 @@ def squareroot():
     a, b, c, d = possibleanswers
     print(f"('', 'Math', 'What is the squareroot of {r2}?', '{correctanswer}','{a}', '{b}', '{c}', '{d}', 'Powers'),")  
     sqltext.write(f"('', 'Math', 'What is the squareroot of {r2}?', '{correctanswer}','{a}', '{b}', '{c}', '{d}', 'Powers'),")
-
+addition()
+subtraction()
+multiplication()
+division()
 powers()
 squareroot()
 
