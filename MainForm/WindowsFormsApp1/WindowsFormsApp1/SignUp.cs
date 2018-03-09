@@ -30,7 +30,8 @@ namespace WindowsFormsApp1
         }
         public bool Register(string user, string pass, string email) {
 
-            string query = $"INSERT INTO users (id, username, password, email) VALUES ('', '{user}', '{pass}', '{email}')";
+            string query = $"INSERT INTO users (id, username, password, email) VALUES ('', @username, @password, @email)";
+            
             try {
                 if (OpenConnection())
                 {
@@ -38,6 +39,12 @@ namespace WindowsFormsApp1
 
                     try
                     {
+                        cmd.Parameters.Add("@username", MySqlDbType.VarChar);
+                        cmd.Parameters.Add("@password", MySqlDbType.VarChar);
+                        cmd.Parameters.Add("@email", MySqlDbType.VarChar);
+                        cmd.Parameters["@username"].Value = user;
+                        cmd.Parameters["@password"].Value = pass;
+                        cmd.Parameters["@email"].Value = email;
                         cmd.ExecuteNonQuery();
                         return true;
                     }

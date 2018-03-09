@@ -13,6 +13,7 @@ namespace WindowsFormsApp1
 
     public partial class HomePage : Form
     {
+        public static StatsPage stats = new StatsPage();
         public static Quizzes quizpage = new Quizzes();
         public HomePage()
         {
@@ -158,7 +159,8 @@ namespace WindowsFormsApp1
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-
+            stats.Show();
+            this.Hide();
         }
 
         private void label2_Click(object sender, EventArgs e)
