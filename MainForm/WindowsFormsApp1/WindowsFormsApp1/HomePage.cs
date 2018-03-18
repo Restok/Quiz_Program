@@ -13,6 +13,7 @@ namespace WindowsFormsApp1
 
     public partial class HomePage : Form
     {
+        public static string user;
         public static StatsPage stats = new StatsPage();
         public static Quizzes quizpage = new Quizzes();
         public HomePage()
@@ -137,7 +138,7 @@ namespace WindowsFormsApp1
 
         private void HomePage_Load(object sender, EventArgs e)
         {
-            string user = Form1.user;
+            user = Form1.user;
             welcomeText.AutoSize = false;
             welcomeText.Text = $"Welcome, {user}";
         }

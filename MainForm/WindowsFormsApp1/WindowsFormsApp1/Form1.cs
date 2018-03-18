@@ -20,7 +20,7 @@ namespace WindowsFormsApp1
         public Form1()
         {
             string connString;
-            connString = "server = den1.mysql1.gear.host; username = toredatabase; password =c-production; database = toredatabase";
+            connString = "server = den1.mysql1.gear.host; username = toredatabase; password =c-production; database = toredatabase;";
 
             conn = new MySqlConnection(connString);
             InitializeComponent();
@@ -127,7 +127,7 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            OpenConnection();
         }
 
         private bool OpenConnection()

@@ -263,6 +263,12 @@ namespace WindowsFormsApp1
             bunifuTransition5.HideSync(bunifuGradientPanel1);
         }
 
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            HomePage.stats.Show();
+        }
+
         private void label2_Click(object sender, EventArgs e)
     {
             this.Close();

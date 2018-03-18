@@ -14,6 +14,7 @@ namespace WindowsFormsApp1
 {
     public partial class QuestionsForm : Form
     {
+        double cur_percent;
         string choiceA;
         string choiceB;
         string choiceC;
@@ -145,6 +146,7 @@ namespace WindowsFormsApp1
             else
             {
                 MessageBox.Show("Connection not opened!");
+                conn.Close();
             }
         }
         private void setLabels()
@@ -225,20 +227,45 @@ namespace WindowsFormsApp1
 
             }
         }
+        private void pause(string user)
+        {
+            if (OpenConnection())
+            {
+                string getdata = $"SELECT * FROM '{}'"
+                MySqlCommand comd = new MySqlCommand();
+            }
+        }
         private void recordScore()
         {
             if (OpenConnection())
             {
+                string curscore = percentage.Text; 
                 string currentUser = Form1.user;
-                string query = $"INSERT INTO scores (id, user, {Details}) VALUES ('', '{currentUser}', '{percentage}')";
-                MySqlCommand insertScore = new MySqlCommand(query, conn);
+                string checkExisting = $"SELECT * FROM scores WHERE user = '{currentUser}'";
+                string query = $"INSERT INTO scores (id, user, {Details}) VALUES ('', '{currentUser}', '{curscore}')";
+                string update = $"UPDATE scores SET {Details} = '{curscore}' WHERE user = '{currentUser}'";
+                MySqlCommand checkex = new MySqlCommand(checkExisting, conn);
                 try
                 {
-                    insertScore.ExecuteNonQuery();
+                    MySqlDataReader excheck = checkex.ExecuteReader();
+                    conn.Close();
+                    conn.Open();
+                    MySqlCommand up = new MySqlCommand(update, conn);
+                    up.ExecuteNonQuery();
                 }
-                catch (Exception ex)
+                catch(MySqlException ex)
                 {
-                    MessageBox.Show("error running query" + ex);
+                    MySqlCommand insertScore = new MySqlCommand(query, conn);
+                    try
+                    {
+                        insertScore.ExecuteNonQuery();
+                    }
+                    catch (Exception x)
+                    {
+                        MessageBox.Show("error running query" + x);
+                    }
+                    
+                    MessageBox.Show("error!" + ex);
                 }
                 conn.Close();
             }
@@ -263,7 +290,7 @@ namespace WindowsFormsApp1
                 percentage.Text = "N/A";
             }
             else {
-                double cur_percent = correctCount / (currentQuestionNumber - 1) * 100;
+                cur_percent = correctCount / (currentQuestionNumber - 1) * 100;
                 percentage.Text = (Math.Round(cur_percent, 2)).ToString() + '%';
             }
         }
@@ -283,6 +310,11 @@ namespace WindowsFormsApp1
             checkCorrect(button4);
         }
 
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private bool OpenConnection()
         {
             try
@@ -296,6 +328,8 @@ namespace WindowsFormsApp1
                 return false;
             }
         }
+
+
     }
 
 }

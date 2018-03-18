@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation10 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation5 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Quizzes));
-            BunifuAnimatorNS.Animation animation13 = new BunifuAnimatorNS.Animation();
-            BunifuAnimatorNS.Animation animation11 = new BunifuAnimatorNS.Animation();
-            BunifuAnimatorNS.Animation animation12 = new BunifuAnimatorNS.Animation();
-            BunifuAnimatorNS.Animation animation14 = new BunifuAnimatorNS.Animation();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -77,6 +77,7 @@
             this.bunifuTransition3 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.bunifuTransition4 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.bunifuTransition5 = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -101,14 +102,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTransition3.SetDecoration(this.label3, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition5.SetDecoration(this.label3, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.label3, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition3.SetDecoration(this.label3, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition4.SetDecoration(this.label3, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.label3, BunifuAnimatorNS.DecorationType.None);
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -124,8 +127,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTransition3.SetDecoration(this.label2, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition5.SetDecoration(this.label2, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.label2, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition3.SetDecoration(this.label2, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition4.SetDecoration(this.label2, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.label2, BunifuAnimatorNS.DecorationType.None);
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -140,15 +144,17 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.pictureBox11);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.pictureBox10);
             this.panel1.Controls.Add(this.pictureBox9);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
+            this.bunifuTransition3.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition4.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition3.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition5.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
             this.panel1.Location = new System.Drawing.Point(0, -1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1280, 99);
@@ -162,8 +168,9 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTransition3.SetDecoration(this.label10, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition5.SetDecoration(this.label10, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.label10, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition3.SetDecoration(this.label10, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition4.SetDecoration(this.label10, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.label10, BunifuAnimatorNS.DecorationType.None);
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -178,8 +185,9 @@
             // pictureBox10
             // 
             this.bunifuTransition3.SetDecoration(this.pictureBox10, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition4.SetDecoration(this.pictureBox10, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.pictureBox10, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition5.SetDecoration(this.pictureBox10, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition4.SetDecoration(this.pictureBox10, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.pictureBox10, BunifuAnimatorNS.DecorationType.None);
             this.pictureBox10.Location = new System.Drawing.Point(4, 4);
             this.pictureBox10.Name = "pictureBox10";
@@ -192,8 +200,9 @@
             this.pictureBox9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox9.BackgroundImage")));
             this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuTransition3.SetDecoration(this.pictureBox9, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition4.SetDecoration(this.pictureBox9, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.pictureBox9, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition5.SetDecoration(this.pictureBox9, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition4.SetDecoration(this.pictureBox9, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.pictureBox9, BunifuAnimatorNS.DecorationType.None);
             this.pictureBox9.Location = new System.Drawing.Point(590, 19);
             this.pictureBox9.Name = "pictureBox9";
@@ -207,8 +216,9 @@
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuTransition3.SetDecoration(this.pictureBox2, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition4.SetDecoration(this.pictureBox2, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.pictureBox2, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition5.SetDecoration(this.pictureBox2, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition4.SetDecoration(this.pictureBox2, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.pictureBox2, BunifuAnimatorNS.DecorationType.None);
             this.pictureBox2.Location = new System.Drawing.Point(560, 640);
             this.pictureBox2.Name = "pictureBox2";
@@ -216,6 +226,7 @@
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Visible = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             this.pictureBox2.MouseLeave += new System.EventHandler(this.pictureBox2_MouseLeave);
             this.pictureBox2.MouseHover += new System.EventHandler(this.pictureBox2_MouseHover);
             // 
@@ -226,8 +237,9 @@
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuTransition3.SetDecoration(this.pictureBox3, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition4.SetDecoration(this.pictureBox3, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.pictureBox3, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition5.SetDecoration(this.pictureBox3, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition4.SetDecoration(this.pictureBox3, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.pictureBox3, BunifuAnimatorNS.DecorationType.None);
             this.pictureBox3.Location = new System.Drawing.Point(654, 630);
             this.pictureBox3.Name = "pictureBox3";
@@ -244,8 +256,9 @@
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuTransition3.SetDecoration(this.pictureBox4, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition4.SetDecoration(this.pictureBox4, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.pictureBox4, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition5.SetDecoration(this.pictureBox4, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition4.SetDecoration(this.pictureBox4, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.pictureBox4, BunifuAnimatorNS.DecorationType.None);
             this.pictureBox4.Location = new System.Drawing.Point(764, 636);
             this.pictureBox4.Name = "pictureBox4";
@@ -261,8 +274,9 @@
             this.pictureBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.BackgroundImage")));
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bunifuTransition3.SetDecoration(this.pictureBox6, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition4.SetDecoration(this.pictureBox6, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.pictureBox6, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition5.SetDecoration(this.pictureBox6, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition4.SetDecoration(this.pictureBox6, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.pictureBox6, BunifuAnimatorNS.DecorationType.None);
             this.pictureBox6.Location = new System.Drawing.Point(560, 640);
             this.pictureBox6.Name = "pictureBox6";
@@ -277,8 +291,9 @@
             this.pictureBox7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox7.BackgroundImage")));
             this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuTransition3.SetDecoration(this.pictureBox7, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition4.SetDecoration(this.pictureBox7, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.pictureBox7, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition5.SetDecoration(this.pictureBox7, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition4.SetDecoration(this.pictureBox7, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.pictureBox7, BunifuAnimatorNS.DecorationType.None);
             this.pictureBox7.Location = new System.Drawing.Point(654, 630);
             this.pictureBox7.Name = "pictureBox7";
@@ -292,8 +307,9 @@
             this.pictureBox8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox8.BackgroundImage")));
             this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bunifuTransition3.SetDecoration(this.pictureBox8, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition4.SetDecoration(this.pictureBox8, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.pictureBox8, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition5.SetDecoration(this.pictureBox8, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition4.SetDecoration(this.pictureBox8, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.pictureBox8, BunifuAnimatorNS.DecorationType.None);
             this.pictureBox8.Location = new System.Drawing.Point(764, 636);
             this.pictureBox8.Name = "pictureBox8";
@@ -308,8 +324,9 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuTransition3.SetDecoration(this.pictureBox1, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition4.SetDecoration(this.pictureBox1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.pictureBox1, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition5.SetDecoration(this.pictureBox1, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition4.SetDecoration(this.pictureBox1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.pictureBox1, BunifuAnimatorNS.DecorationType.None);
             this.pictureBox1.Location = new System.Drawing.Point(468, 640);
             this.pictureBox1.Name = "pictureBox1";
@@ -326,8 +343,9 @@
             this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bunifuTransition3.SetDecoration(this.pictureBox5, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition4.SetDecoration(this.pictureBox5, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.pictureBox5, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition5.SetDecoration(this.pictureBox5, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition4.SetDecoration(this.pictureBox5, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.pictureBox5, BunifuAnimatorNS.DecorationType.None);
             this.pictureBox5.Location = new System.Drawing.Point(468, 640);
             this.pictureBox5.Name = "pictureBox5";
@@ -345,10 +363,11 @@
             this.panel2.Controls.Add(this.Sub1);
             this.panel2.Controls.Add(this.bunifuImageButton2);
             this.panel2.Controls.Add(this.bunifuImageButton1);
+            this.bunifuTransition3.SetDecoration(this.panel2, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition4.SetDecoration(this.panel2, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.panel2, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.panel2, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition3.SetDecoration(this.panel2, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition5.SetDecoration(this.panel2, BunifuAnimatorNS.DecorationType.None);
             this.panel2.Location = new System.Drawing.Point(0, 185);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1280, 363);
@@ -356,8 +375,9 @@
             // 
             // label1
             // 
-            this.bunifuTransition3.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition5.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition3.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition4.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -373,10 +393,11 @@
             // 
             this.Sub3.BackColor = System.Drawing.Color.LemonChiffon;
             this.Sub3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTransition4.SetDecoration(this.Sub3, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition3.SetDecoration(this.Sub3, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.Sub3, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.Sub3, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition3.SetDecoration(this.Sub3, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition4.SetDecoration(this.Sub3, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition5.SetDecoration(this.Sub3, BunifuAnimatorNS.DecorationType.None);
             this.Sub3.Image = ((System.Drawing.Image)(resources.GetObject("Sub3.Image")));
             this.Sub3.ImageActive = null;
             this.Sub3.Location = new System.Drawing.Point(385, 94);
@@ -393,10 +414,11 @@
             // 
             this.Sub2.BackColor = System.Drawing.Color.Lavender;
             this.Sub2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTransition4.SetDecoration(this.Sub2, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition3.SetDecoration(this.Sub2, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.Sub2, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.Sub2, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition3.SetDecoration(this.Sub2, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition4.SetDecoration(this.Sub2, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition5.SetDecoration(this.Sub2, BunifuAnimatorNS.DecorationType.None);
             this.Sub2.Image = ((System.Drawing.Image)(resources.GetObject("Sub2.Image")));
             this.Sub2.ImageActive = null;
             this.Sub2.Location = new System.Drawing.Point(385, 94);
@@ -413,10 +435,11 @@
             // 
             this.Sub1.BackColor = System.Drawing.Color.PaleTurquoise;
             this.Sub1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTransition4.SetDecoration(this.Sub1, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition3.SetDecoration(this.Sub1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.Sub1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.Sub1, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition3.SetDecoration(this.Sub1, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition4.SetDecoration(this.Sub1, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition5.SetDecoration(this.Sub1, BunifuAnimatorNS.DecorationType.None);
             this.Sub1.Image = ((System.Drawing.Image)(resources.GetObject("Sub1.Image")));
             this.Sub1.ImageActive = null;
             this.Sub1.Location = new System.Drawing.Point(385, 94);
@@ -432,10 +455,11 @@
             // 
             this.bunifuImageButton2.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTransition4.SetDecoration(this.bunifuImageButton2, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition3.SetDecoration(this.bunifuImageButton2, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.bunifuImageButton2, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.bunifuImageButton2, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition3.SetDecoration(this.bunifuImageButton2, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition4.SetDecoration(this.bunifuImageButton2, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition5.SetDecoration(this.bunifuImageButton2, BunifuAnimatorNS.DecorationType.None);
             this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
             this.bunifuImageButton2.ImageActive = null;
             this.bunifuImageButton2.Location = new System.Drawing.Point(92, 127);
@@ -451,10 +475,11 @@
             // 
             this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTransition4.SetDecoration(this.bunifuImageButton1, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition3.SetDecoration(this.bunifuImageButton1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.bunifuImageButton1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.bunifuImageButton1, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition3.SetDecoration(this.bunifuImageButton1, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition4.SetDecoration(this.bunifuImageButton1, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition5.SetDecoration(this.bunifuImageButton1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
             this.bunifuImageButton1.ImageActive = null;
             this.bunifuImageButton1.Location = new System.Drawing.Point(1120, 127);
@@ -470,22 +495,22 @@
             // 
             this.bunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide;
             this.bunifuTransition1.Cursor = null;
-            animation10.AnimateOnlyDifferences = true;
-            animation10.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.BlindCoeff")));
-            animation10.LeafCoeff = 0F;
-            animation10.MaxTime = 1F;
-            animation10.MinTime = 0F;
-            animation10.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.MosaicCoeff")));
-            animation10.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation10.MosaicShift")));
-            animation10.MosaicSize = 0;
-            animation10.Padding = new System.Windows.Forms.Padding(0);
-            animation10.RotateCoeff = 0F;
-            animation10.RotateLimit = 0F;
-            animation10.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.ScaleCoeff")));
-            animation10.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.SlideCoeff")));
-            animation10.TimeCoeff = 0F;
-            animation10.TransparencyCoeff = 0F;
-            this.bunifuTransition1.DefaultAnimation = animation10;
+            animation5.AnimateOnlyDifferences = true;
+            animation5.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.BlindCoeff")));
+            animation5.LeafCoeff = 0F;
+            animation5.MaxTime = 1F;
+            animation5.MinTime = 0F;
+            animation5.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicCoeff")));
+            animation5.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicShift")));
+            animation5.MosaicSize = 0;
+            animation5.Padding = new System.Windows.Forms.Padding(0);
+            animation5.RotateCoeff = 0F;
+            animation5.RotateLimit = 0F;
+            animation5.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.ScaleCoeff")));
+            animation5.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.SlideCoeff")));
+            animation5.TimeCoeff = 0F;
+            animation5.TransparencyCoeff = 0F;
+            this.bunifuTransition1.DefaultAnimation = animation5;
             // 
             // panel3
             // 
@@ -544,14 +569,15 @@
             this.bunifuThinButton22.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(183)))), ((int)(((byte)(213)))));
             this.bunifuThinButton22.ActiveForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.bunifuThinButton22.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton22.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuThinButton22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(25)))), ((int)(((byte)(30)))));
             this.bunifuThinButton22.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton22.BackgroundImage")));
             this.bunifuThinButton22.ButtonText = "No";
             this.bunifuThinButton22.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTransition3.SetDecoration(this.bunifuThinButton22, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition5.SetDecoration(this.bunifuThinButton22, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition4.SetDecoration(this.bunifuThinButton22, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.bunifuThinButton22, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.bunifuThinButton22, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition4.SetDecoration(this.bunifuThinButton22, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition3.SetDecoration(this.bunifuThinButton22, BunifuAnimatorNS.DecorationType.None);
             this.bunifuThinButton22.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuThinButton22.ForeColor = System.Drawing.Color.SeaGreen;
             this.bunifuThinButton22.IdleBorderThickness = 1;
@@ -560,7 +586,7 @@
             this.bunifuThinButton22.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.bunifuThinButton22.IdleLineColor = System.Drawing.SystemColors.ActiveCaption;
             this.bunifuThinButton22.Location = new System.Drawing.Point(231, 116);
-            this.bunifuThinButton22.Margin = new System.Windows.Forms.Padding(6);
+            this.bunifuThinButton22.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.bunifuThinButton22.Name = "bunifuThinButton22";
             this.bunifuThinButton22.Size = new System.Drawing.Size(145, 67);
             this.bunifuThinButton22.TabIndex = 2;
@@ -574,14 +600,15 @@
             this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(183)))), ((int)(((byte)(213)))));
             this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuThinButton21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(25)))), ((int)(((byte)(30)))));
             this.bunifuThinButton21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton21.BackgroundImage")));
             this.bunifuThinButton21.ButtonText = "Yes";
             this.bunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTransition3.SetDecoration(this.bunifuThinButton21, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition5.SetDecoration(this.bunifuThinButton21, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition4.SetDecoration(this.bunifuThinButton21, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.bunifuThinButton21, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.bunifuThinButton21, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition4.SetDecoration(this.bunifuThinButton21, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition3.SetDecoration(this.bunifuThinButton21, BunifuAnimatorNS.DecorationType.None);
             this.bunifuThinButton21.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuThinButton21.ForeColor = System.Drawing.Color.SeaGreen;
             this.bunifuThinButton21.IdleBorderThickness = 1;
@@ -590,7 +617,7 @@
             this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.bunifuThinButton21.IdleLineColor = System.Drawing.SystemColors.ActiveCaption;
             this.bunifuThinButton21.Location = new System.Drawing.Point(59, 118);
-            this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(6);
+            this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.bunifuThinButton21.Name = "bunifuThinButton21";
             this.bunifuThinButton21.Size = new System.Drawing.Size(145, 67);
             this.bunifuThinButton21.TabIndex = 1;
@@ -600,8 +627,9 @@
             // label11
             // 
             this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition3.SetDecoration(this.label11, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition5.SetDecoration(this.label11, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.label11, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition3.SetDecoration(this.label11, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition4.SetDecoration(this.label11, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.label11, BunifuAnimatorNS.DecorationType.None);
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -616,8 +644,9 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.bunifuTransition3.SetDecoration(this.label9, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition5.SetDecoration(this.label9, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.label9, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition3.SetDecoration(this.label9, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition4.SetDecoration(this.label9, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.label9, BunifuAnimatorNS.DecorationType.None);
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -631,8 +660,9 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.bunifuTransition3.SetDecoration(this.label8, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition5.SetDecoration(this.label8, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.label8, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition3.SetDecoration(this.label8, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition4.SetDecoration(this.label8, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.label8, BunifuAnimatorNS.DecorationType.None);
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -647,8 +677,9 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.bunifuTransition3.SetDecoration(this.label7, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition5.SetDecoration(this.label7, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.label7, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition3.SetDecoration(this.label7, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition4.SetDecoration(this.label7, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.label7, BunifuAnimatorNS.DecorationType.None);
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -662,8 +693,9 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.bunifuTransition3.SetDecoration(this.label6, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition5.SetDecoration(this.label6, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.label6, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition3.SetDecoration(this.label6, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition4.SetDecoration(this.label6, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.label6, BunifuAnimatorNS.DecorationType.None);
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -678,10 +710,11 @@
             // 
             this.bunifuImageButton7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.bunifuImageButton7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTransition4.SetDecoration(this.bunifuImageButton7, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition3.SetDecoration(this.bunifuImageButton7, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.bunifuImageButton7, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.bunifuImageButton7, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition3.SetDecoration(this.bunifuImageButton7, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition4.SetDecoration(this.bunifuImageButton7, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition5.SetDecoration(this.bunifuImageButton7, BunifuAnimatorNS.DecorationType.None);
             this.bunifuImageButton7.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton7.Image")));
             this.bunifuImageButton7.ImageActive = null;
             this.bunifuImageButton7.Location = new System.Drawing.Point(506, 76);
@@ -697,10 +730,11 @@
             // 
             this.bunifuImageButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.bunifuImageButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTransition4.SetDecoration(this.bunifuImageButton4, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition3.SetDecoration(this.bunifuImageButton4, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.bunifuImageButton4, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.bunifuImageButton4, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition3.SetDecoration(this.bunifuImageButton4, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition4.SetDecoration(this.bunifuImageButton4, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition5.SetDecoration(this.bunifuImageButton4, BunifuAnimatorNS.DecorationType.None);
             this.bunifuImageButton4.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton4.Image")));
             this.bunifuImageButton4.ImageActive = null;
             this.bunifuImageButton4.Location = new System.Drawing.Point(299, 76);
@@ -716,10 +750,11 @@
             // 
             this.bunifuImageButton6.BackColor = System.Drawing.Color.DodgerBlue;
             this.bunifuImageButton6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTransition4.SetDecoration(this.bunifuImageButton6, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition3.SetDecoration(this.bunifuImageButton6, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.bunifuImageButton6, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.bunifuImageButton6, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition3.SetDecoration(this.bunifuImageButton6, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition4.SetDecoration(this.bunifuImageButton6, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition5.SetDecoration(this.bunifuImageButton6, BunifuAnimatorNS.DecorationType.None);
             this.bunifuImageButton6.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton6.Image")));
             this.bunifuImageButton6.ImageActive = null;
             this.bunifuImageButton6.Location = new System.Drawing.Point(87, 261);
@@ -735,10 +770,11 @@
             // 
             this.bunifuImageButton5.BackColor = System.Drawing.Color.SeaGreen;
             this.bunifuImageButton5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTransition4.SetDecoration(this.bunifuImageButton5, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition3.SetDecoration(this.bunifuImageButton5, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.bunifuImageButton5, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.bunifuImageButton5, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition3.SetDecoration(this.bunifuImageButton5, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition4.SetDecoration(this.bunifuImageButton5, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition5.SetDecoration(this.bunifuImageButton5, BunifuAnimatorNS.DecorationType.None);
             this.bunifuImageButton5.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton5.Image")));
             this.bunifuImageButton5.ImageActive = null;
             this.bunifuImageButton5.Location = new System.Drawing.Point(393, 261);
@@ -754,10 +790,11 @@
             // 
             this.bunifuImageButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.bunifuImageButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTransition4.SetDecoration(this.bunifuImageButton3, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition3.SetDecoration(this.bunifuImageButton3, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.bunifuImageButton3, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.bunifuImageButton3, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition3.SetDecoration(this.bunifuImageButton3, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition4.SetDecoration(this.bunifuImageButton3, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition5.SetDecoration(this.bunifuImageButton3, BunifuAnimatorNS.DecorationType.None);
             this.bunifuImageButton3.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton3.Image")));
             this.bunifuImageButton3.ImageActive = null;
             this.bunifuImageButton3.Location = new System.Drawing.Point(87, 76);
@@ -772,8 +809,9 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.bunifuTransition3.SetDecoration(this.label5, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition5.SetDecoration(this.label5, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.label5, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition3.SetDecoration(this.label5, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition4.SetDecoration(this.label5, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.label5, BunifuAnimatorNS.DecorationType.None);
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -788,8 +826,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTransition3.SetDecoration(this.label4, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition5.SetDecoration(this.label4, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.label4, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition3.SetDecoration(this.label4, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition4.SetDecoration(this.label4, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.label4, BunifuAnimatorNS.DecorationType.None);
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -805,86 +844,101 @@
             // 
             this.bunifuTransition2.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide;
             this.bunifuTransition2.Cursor = null;
-            animation13.AnimateOnlyDifferences = true;
-            animation13.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation13.BlindCoeff")));
-            animation13.LeafCoeff = 0F;
-            animation13.MaxTime = 1F;
-            animation13.MinTime = 0F;
-            animation13.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation13.MosaicCoeff")));
-            animation13.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation13.MosaicShift")));
-            animation13.MosaicSize = 0;
-            animation13.Padding = new System.Windows.Forms.Padding(0);
-            animation13.RotateCoeff = 0F;
-            animation13.RotateLimit = 0F;
-            animation13.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation13.ScaleCoeff")));
-            animation13.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation13.SlideCoeff")));
-            animation13.TimeCoeff = 0F;
-            animation13.TransparencyCoeff = 0F;
-            this.bunifuTransition2.DefaultAnimation = animation13;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.bunifuTransition2.DefaultAnimation = animation2;
             // 
             // bunifuTransition3
             // 
             this.bunifuTransition3.AnimationType = BunifuAnimatorNS.AnimationType.Transparent;
             this.bunifuTransition3.Cursor = null;
-            animation11.AnimateOnlyDifferences = true;
-            animation11.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation11.BlindCoeff")));
-            animation11.LeafCoeff = 0F;
-            animation11.MaxTime = 1F;
-            animation11.MinTime = 0F;
-            animation11.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation11.MosaicCoeff")));
-            animation11.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation11.MosaicShift")));
-            animation11.MosaicSize = 0;
-            animation11.Padding = new System.Windows.Forms.Padding(0);
-            animation11.RotateCoeff = 0F;
-            animation11.RotateLimit = 0F;
-            animation11.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation11.ScaleCoeff")));
-            animation11.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation11.SlideCoeff")));
-            animation11.TimeCoeff = 0F;
-            animation11.TransparencyCoeff = 1F;
-            this.bunifuTransition3.DefaultAnimation = animation11;
+            animation3.AnimateOnlyDifferences = true;
+            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
+            animation3.LeafCoeff = 0F;
+            animation3.MaxTime = 1F;
+            animation3.MinTime = 0F;
+            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
+            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
+            animation3.MosaicSize = 0;
+            animation3.Padding = new System.Windows.Forms.Padding(0);
+            animation3.RotateCoeff = 0F;
+            animation3.RotateLimit = 0F;
+            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
+            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
+            animation3.TimeCoeff = 0F;
+            animation3.TransparencyCoeff = 1F;
+            this.bunifuTransition3.DefaultAnimation = animation3;
             this.bunifuTransition3.MaxAnimationTime = 2000;
             // 
             // bunifuTransition4
             // 
             this.bunifuTransition4.AnimationType = BunifuAnimatorNS.AnimationType.Transparent;
             this.bunifuTransition4.Cursor = null;
-            animation12.AnimateOnlyDifferences = true;
-            animation12.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation12.BlindCoeff")));
-            animation12.LeafCoeff = 0F;
-            animation12.MaxTime = 1F;
-            animation12.MinTime = 0F;
-            animation12.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation12.MosaicCoeff")));
-            animation12.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation12.MosaicShift")));
-            animation12.MosaicSize = 0;
-            animation12.Padding = new System.Windows.Forms.Padding(0);
-            animation12.RotateCoeff = 0F;
-            animation12.RotateLimit = 0F;
-            animation12.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation12.ScaleCoeff")));
-            animation12.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation12.SlideCoeff")));
-            animation12.TimeCoeff = 0F;
-            animation12.TransparencyCoeff = 1F;
-            this.bunifuTransition4.DefaultAnimation = animation12;
+            animation4.AnimateOnlyDifferences = true;
+            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
+            animation4.LeafCoeff = 0F;
+            animation4.MaxTime = 1F;
+            animation4.MinTime = 0F;
+            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
+            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
+            animation4.MosaicSize = 0;
+            animation4.Padding = new System.Windows.Forms.Padding(0);
+            animation4.RotateCoeff = 0F;
+            animation4.RotateLimit = 0F;
+            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
+            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
+            animation4.TimeCoeff = 0F;
+            animation4.TransparencyCoeff = 1F;
+            this.bunifuTransition4.DefaultAnimation = animation4;
             // 
             // bunifuTransition5
             // 
             this.bunifuTransition5.AnimationType = BunifuAnimatorNS.AnimationType.Scale;
             this.bunifuTransition5.Cursor = null;
-            animation14.AnimateOnlyDifferences = true;
-            animation14.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation14.BlindCoeff")));
-            animation14.LeafCoeff = 0F;
-            animation14.MaxTime = 1F;
-            animation14.MinTime = 0F;
-            animation14.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation14.MosaicCoeff")));
-            animation14.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation14.MosaicShift")));
-            animation14.MosaicSize = 0;
-            animation14.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
-            animation14.RotateCoeff = 0F;
-            animation14.RotateLimit = 0F;
-            animation14.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation14.ScaleCoeff")));
-            animation14.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation14.SlideCoeff")));
-            animation14.TimeCoeff = 0F;
-            animation14.TransparencyCoeff = 0F;
-            this.bunifuTransition5.DefaultAnimation = animation14;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.bunifuTransition5.DefaultAnimation = animation1;
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox11.BackgroundImage")));
+            this.pictureBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuTransition3.SetDecoration(this.pictureBox11, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.pictureBox11, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition5.SetDecoration(this.pictureBox11, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition4.SetDecoration(this.pictureBox11, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition1.SetDecoration(this.pictureBox11, BunifuAnimatorNS.DecorationType.None);
+            this.pictureBox11.Location = new System.Drawing.Point(580, 36);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(100, 37);
+            this.pictureBox11.TabIndex = 13;
+            this.pictureBox11.TabStop = false;
             // 
             // Quizzes
             // 
@@ -938,6 +992,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -986,5 +1041,6 @@
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
         private System.Windows.Forms.Label label11;
         private BunifuAnimatorNS.BunifuTransition bunifuTransition5;
+        private System.Windows.Forms.PictureBox pictureBox11;
     }
 }

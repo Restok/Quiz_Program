@@ -8,19 +8,31 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApp1
 {
-    
-    public partial class  StatsPage : Form
+
+    public partial class StatsPage : Form
     {
+        string tempscore;
+        string adsc;
+        string susc;
+        string musc;
+        string disc;
+        string posc;
+        private MySqlConnection conn;
         public StatsPage()
         {
+            string connString;
+            connString = "server =den1.mysql1.gear.host; username = toredatabase; password =c-production; database = toredatabase";
+
+            conn = new MySqlConnection(connString);
             InitializeComponent();
         }
 
-    int mouseX = 0, mouseY = 0;
-    bool mouseDown;
+        int mouseX = 0, mouseY = 0;
+        bool mouseDown;
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -53,11 +65,11 @@ namespace WindowsFormsApp1
 
         }
 
-/*        private void hover1_MouseHover(object sender, EventArgs e)
-        {
-            MessageBox.Show("Hovering!");
-        }
-*/
+        /*        private void hover1_MouseHover(object sender, EventArgs e)
+                {
+                    MessageBox.Show("Hovering!");
+                }
+        */
 
 
 
@@ -134,11 +146,6 @@ namespace WindowsFormsApp1
             pictureBox8.Visible = true;
         }
 
-        private void HomePage_Load(object sender, EventArgs e)
-        {
-            string user = Form1.user;
-        }
-
         private void welcomeText_Click(object sender, EventArgs e)
         {
 
@@ -152,6 +159,7 @@ namespace WindowsFormsApp1
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
+
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -161,48 +169,128 @@ namespace WindowsFormsApp1
 
         private void bunifuFlatButton3_Click(object sender, EventArgs e)
         {
+            label1.Text = "None";
 
+            label4.Text = "None";
+            label5.Text = "None";
+            label6.Text = "None";
+            label7.Text = "None";
+            label8.Text = "None";
+            label9.Text = "None";
+            label10.Text = "None";
+            label11.Text = "None";
+            label12.Text = "None";
         }
+
 
         private void label2_Click(object sender, EventArgs e)
-    {
+        {
             this.Close();
-    }
-
-
-    
-
-
-    }
-    class CustomTabControl : TabControl
-    {
-        private const int TCM_ADJUSTRECT = 0x1328;
-
-        protected override void WndProc(ref Message m)
+        }
+        private void getStats(string us, string cate)
         {
-            //Hide the tab headers at run-time
-            if (m.Msg == TCM_ADJUSTRECT)
+            if (OpenConnection())
             {
-
-                RECT rect = (RECT)(m.GetLParam(typeof(RECT)));
-                rect.Left = this.Left - this.Margin.Left;
-                rect.Right = this.Right + this.Margin.Right;
-
-                rect.Top = this.Top - this.Margin.Top;
-                rect.Bottom = this.Bottom + this.Margin.Bottom;
-                Marshal.StructureToPtr(rect, m.LParam, true);
-                //m.Result = (IntPtr)1;
-                //return;
+                try
+                {
+                    string getuserstats = $"SELECT Addition FROM scores WHERE user = '{us}';";
+                    MySqlCommand cmd = new MySqlCommand(getuserstats, conn);
+                    MySqlDataReader getscore = cmd.ExecuteReader();
+                    while(getscore.Read())
+                    {
+                        tempscore = getscore.GetString(0);
+                    }
+                    getscore.Close();
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error getting scores!");
+                    conn.Close();
+                }
             }
-            //else
-            // call the base class implementation
-            base.WndProc(ref m);
+            else
+            {
+                MessageBox.Show("Connection not opened!");
+            }
+        }
+        private void checkNull(Label emp){
+            if(emp.Text == null)
+            {
+                emp.Text = "None";
+            }
+            
+        }
+        private void setTable()
+        {
+            string user = HomePage.user;
+            label1.Text = "Addition";
+            label5.Text = "Subtraction";
+            label7.Text = "Multiplication";
+            label9.Text = "Division";
+            label11.Text = "Exponents";
+            getStats(user, "Addition");
+            label4.Text = tempscore;
+            getStats(user, "Subtraction");
+            label6.Text = tempscore;
+            getStats(user, "Multiplication");
+            label8.Text = tempscore;
+            getStats(user, "Division");
+            label10.Text = tempscore;
+            getStats(user, "Powers");
+            label12.Text = tempscore;
+            checkNull(label4);
+            checkNull(label6);
+            checkNull(label8);
+            checkNull(label10);
+            checkNull(label12);
+        }
+        private void StatsPage_Load(object sender, EventArgs e)
+        {
+            setTable();
         }
 
-        private struct RECT
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-            public int Left, Top, Right, Bottom;
+            Form1.homepage.Show();
+        }
+
+
+
+        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        {
+            label1.Text = "None";
+            label4.Text = "None";
+            label5.Text = "None";
+            label6.Text = "None";
+            label7.Text = "None";
+            label8.Text = "None";
+            label9.Text = "None";
+            label10.Text = "None";
+            label11.Text = "None";
+            label12.Text = "None";
+        }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            setTable();
+        }
+
+        private bool OpenConnection()
+            {
+                try
+                {
+                    conn.Open();
+                    return true;
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("Connection not opened");
+                    return false;
+                }
+            }
+
+
+
         }
     }
-
-}
