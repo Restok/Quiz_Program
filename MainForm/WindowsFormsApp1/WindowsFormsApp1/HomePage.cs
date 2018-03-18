@@ -13,6 +13,7 @@ namespace WindowsFormsApp1
 
     public partial class HomePage : Form
     {
+        public static bool load = false;
         public static string user;
         public static StatsPage stats = new StatsPage();
         public static Quizzes quizpage = new Quizzes();
@@ -162,6 +163,29 @@ namespace WindowsFormsApp1
         {
             stats.Show();
             this.Hide();
+        }
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            panel4.Visible = true;
+        }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            load = true;
+            Form1.homepage.Hide();
+            Form1.questionspage.Show();
+            panel4.Visible = false;
+        }
+
+        private void bunifuFlatButton4_Click(object sender, EventArgs e)
+        {
+            panel4.Visible = false;
+        }
+
+        private void bunifuImageButton2_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void label2_Click(object sender, EventArgs e)

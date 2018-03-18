@@ -14,6 +14,7 @@ namespace WindowsFormsApp1
 {
     public partial class QuestionsForm : Form
     {
+        bool hardmode = false;
         double cur_percent;
         string choiceA;
         string choiceB;
@@ -168,13 +169,32 @@ namespace WindowsFormsApp1
         }
         private void QuestionsForm_Load(object sender, EventArgs e)
         {
-
-            currentQuestionNumber = 1;
             totalQuestionNumber = 15;
-            getQuestionBank(Subject, Details);
-            questionBox.Text = getQuestion();
-            setLabels();
-            setQuestionValues();
+            if (HomePage.load == true)
+            {
+                HomePage.load = false;
+                load_save();
+                questionBox.Text = currentQuestion;
+                getQuestionBank(Subject, Details);
+                setLabels();
+                setQuestionValues();
+            }
+            else
+            {
+                getQuestionBank(Subject, Details);
+                questionBox.Text = getQuestion();
+                currentQuestionNumber = 1;
+                setLabels();
+                setQuestionValues();
+            }
+        }
+        private void deleteSave()
+        {
+            if (OpenConnection())
+            {
+                string currentUser = Form1.user;
+                string delete = $"DELETE FROM saveslot WHERE USER = {currentUser}";
+            }
         }
         private void checkCorrect(Button chosen) {
 
@@ -182,10 +202,18 @@ namespace WindowsFormsApp1
             if(currentQuestionNumber < 16){
                 if (chosen.Text == correctAnswer)
                 {
-                    bunifuTransition1.ShowSync(pictureBox4);
-                    Thread.Sleep(1500);
-                    bunifuTransition1.HideSync(pictureBox4);
-                    correctCount += 1;
+                    if (hardmode == false)
+                    {
+                        bunifuTransition1.ShowSync(pictureBox4);
+                        timer1.Start();
+                        correctCount += 1;
+                    }
+                    else
+                    {
+                        bunifuTransition1.Show(pictureBox2);
+                        timer3.Start();
+                        correctCount += 1;
+                    }
                     setQuestionValues();
                     questionBox.Text = getQuestion();
                     setLabels();
@@ -193,8 +221,7 @@ namespace WindowsFormsApp1
                 }
                 else {
                     bunifuTransition1.ShowSync(pictureBox5);
-                    Thread.Sleep(1500);
-                    bunifuTransition1.HideSync(pictureBox5);
+                    timer2.Start();
                     missedCount += 1;
                     questionBox.Text = getQuestion();
                     setLabels();
@@ -203,36 +230,77 @@ namespace WindowsFormsApp1
             }
             else
             {
-                if (chosen.Text == correctAnswer)
+                if (hardmode == false)
                 {
                     bunifuTransition1.ShowSync(pictureBox4);
-                    Thread.Sleep(1500);
-                    bunifuTransition1.HideSync(pictureBox4);
+                    timer1.Start();
                     correctCount += 1;
-                    setQuestionValues();
-                    recordScore();
                 }
                 else
                 {
-                    bunifuTransition1.ShowSync(pictureBox5);
-                    Thread.Sleep(1500);
-                    bunifuTransition1.HideSync(pictureBox5);
-                    missedCount += 1;
-                    setQuestionValues();
-                    recordScore();
+                    bunifuTransition1.Show(pictureBox2);
+                    timer3.Start();
+                    correctCount += 1;
                 }
+                setQuestionValues();
+                questionBox.Text = getQuestion();
+                setLabels();
+                deleteSave();
                 MessageBox.Show("Quiz End!");
                 this.Hide();
                 Form1.homepage.Show();
+                hardmode = false;
 
             }
+            if(currentQuestionNumber == 6 && percentage.Text == "100%")
+            {
+                panel9.Visible = true;
+            }
         }
-        private void pause(string user)
+        private void pause()
         {
+            conn.Close();
             if (OpenConnection())
             {
-                string getdata = $"SELECT * FROM '{}'"
-                MySqlCommand comd = new MySqlCommand();
+                string currentUser = Form1.user;
+                string getdata = $"SELECT * FROM saveslot WHERE user = '{currentUser}'";
+                MySqlCommand cd = new MySqlCommand(getdata, conn);
+                MySqlDataReader checkExistence = cd.ExecuteReader();
+                if (checkExistence.Read())
+                {
+                    string updateSave = $"UPDATE saveslot SET CurrentQuestion = '{currentQuestion}', CurrentQuestionNumber = {currentQuestionNumber}, CorrectCount = {correctCount}, MIssedCount = {missedCount}, category = '{Subject}', Details = '{Details}' WHERE user = '{currentUser}'";
+                    MySqlCommand update = new MySqlCommand(updateSave, conn);
+                    try
+                    {
+                        checkExistence.Close();
+                        update.ExecuteNonQuery();
+                        conn.Close();
+
+                    }
+                    catch (MySqlException x)
+                    {
+                        MessageBox.Show("Error updating save!" + x);
+                        checkExistence.Close();
+                        conn.Close();
+                    }
+                }
+                else
+                {
+                    string newsave = $"INSERT INTO saveslot VALUES ('', '{currentUser}', '{currentQuestion}', {currentQuestionNumber}, {correctCount}, {missedCount}, '{Subject}', '{Details}');";
+                    MySqlCommand newEntry = new MySqlCommand(newsave, conn);
+                    try
+                    {
+                        conn.Close();
+                        conn.Open();
+                        newEntry.ExecuteNonQuery();
+                        conn.Close();
+                    }                
+                    catch(MySqlException ex)
+                    {
+                        MessageBox.Show("Error creating new entry!" + ex);
+                        conn.Close();
+                    }
+                }
             }
         }
         private void recordScore()
@@ -309,10 +377,124 @@ namespace WindowsFormsApp1
         {
             checkCorrect(button4);
         }
+        private void load_save()
+        {
+            if (OpenConnection())
+            {
+                string currentUser = Form1.user;
+                string load = $"SELECT * FROM saveslot WHERE user = '{currentUser}'";
+                MySqlCommand loadsave = new MySqlCommand(load, conn);
+                MySqlDataReader readsave = loadsave.ExecuteReader();
+                while (readsave.Read())
+                {
+                    currentQuestion = readsave["currentQuestion"].ToString();
+                    currentQuestionNumber = Convert.ToDouble(readsave["currentQuestionNumber"].ToString());
+                    correctCount = Convert.ToDouble(readsave["correctCount"].ToString());
+                    missedCount = Convert.ToDouble(readsave["MissedCount"].ToString());
+                    Subject = readsave["category"].ToString();
+                    Details = readsave["Details"].ToString();
 
+
+                }
+                readsave.Close();
+                conn.Close();
+            }
+            else
+            {
+                MessageBox.Show("Connection not opened!");
+            }
+        }
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
+            panel5.Visible = true;
+        }
 
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            pause();
+            Form1.questionspage.Hide();
+            Form1.homepage.Show();
+            panel5.Visible = false;
+        }
+
+        private void bunifuFlatButton4_Click(object sender, EventArgs e)
+        {
+            panel5.Visible = false;
+        }
+
+        private void bunifuFlatButton5_Click(object sender, EventArgs e)
+        {
+            panel4.Visible = false;
+            Form1.questionspage.Hide();
+            Form1.homepage.Show();
+
+        }
+
+        private void percentage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuFlatButton9_Click(object sender, EventArgs e)
+        {
+            hardmode = true;
+            questionsBank.Clear();
+            getQuestionBank("Insane", "No Details");
+            questionBox.Text = getQuestion();
+            setLabels();
+            pictureBox1.Visible = true;
+            questionBox.BackColor = Color.DarkRed;
+            button1.BackColor = Color.DarkRed;
+            button2.BackColor = Color.DarkRed;
+            button3.BackColor = Color.DarkRed;
+            button4.BackColor = Color.DarkRed;
+            bunifuImageButton1.Visible = false;
+            bunifuImageButton2.Visible = false;
+            label3.Visible = false;
+            label2.Visible = false;
+            panel9.Visible = false;
+        }
+
+        private void bunifuFlatButton10_Click(object sender, EventArgs e)
+        {
+            hardmode = true;
+            questionsBank.Clear();
+            getQuestionBank("Insane", "No Details");
+            questionBox.Text = getQuestion();
+            setLabels();
+            questionBox.BackColor = Color.DarkRed;
+            button1.BackColor = Color.DarkRed;
+            button2.BackColor = Color.DarkRed;
+            button3.BackColor = Color.DarkRed;
+            button4.BackColor = Color.DarkRed;
+            bunifuImageButton1.Visible = false;
+            bunifuImageButton2.Visible = false;
+            label3.Visible = false;
+            label2.Visible = false;
+            panel9.Visible = false;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            bunifuTransition1.HideSync(pictureBox4);
+            timer1.Stop();
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            bunifuTransition1.HideSync(pictureBox5);
+            timer2.Stop();
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            bunifuTransition1.HideSync(pictureBox2);
+            timer3.Stop();
         }
 
         private bool OpenConnection()
@@ -333,3 +515,4 @@ namespace WindowsFormsApp1
     }
 
 }
+
