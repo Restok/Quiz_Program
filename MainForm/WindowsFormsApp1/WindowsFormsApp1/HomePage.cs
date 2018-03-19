@@ -144,7 +144,7 @@ namespace WindowsFormsApp1
         {
 
             ids = new WMPLib.WindowsMediaPlayer();
-            ids.URL = @"C:\Users\IcyCream\Documents\GitHub\Quiz_Program\Audio Files\I_Don_t_See_the_Branches_I_See_the_Leaves.mp3";
+            ids.URL = @"Audio Files\I_Don_t_See_the_Branches_I_See_the_Leaves.mp3";
             ids.settings.setMode("Loop", true);
             ids.settings.volume = settings.bunifuSlider1.Value;
             ids.controls.play();

@@ -128,7 +128,7 @@ namespace WindowsFormsApp1
         private void Form1_Load(object sender, EventArgs e)
         {
             wplayer = new WMPLib.WindowsMediaPlayer();
-            wplayer.URL = @"C:\Users\IcyCream\Documents\GitHub\Quiz_Program\Audio Files\Brittle_Rille_Reunited.mp3";
+            wplayer.URL = @"Audio Files\Brittle_Rille_Reunited.mp3";
             wplayer.settings.setMode("Loop", true);
             wplayer.controls.play();
             wplayer.settings.volume = bunifuSlider1.Value;
