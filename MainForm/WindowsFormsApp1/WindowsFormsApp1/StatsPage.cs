@@ -15,6 +15,9 @@ namespace WindowsFormsApp1
 
     public partial class StatsPage : Form
     {
+        bool onm = true;
+        bool ons = false;
+        bool onh = false;
         string tempscore;
         string adsc;
         string susc;
@@ -221,9 +224,8 @@ namespace WindowsFormsApp1
             }
             
         }
-        private void setTable()
+        private void setTable(string user)
         {
-            string user = HomePage.user;
             label1.Text = "Addition";
             label5.Text = "Subtraction";
             label7.Text = "Multiplication";
@@ -247,11 +249,13 @@ namespace WindowsFormsApp1
         }
         private void StatsPage_Load(object sender, EventArgs e)
         {
-            setTable();
+            string user = HomePage.user;
+            setTable(user);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Form1.homepage.Show();
         }
 
@@ -259,6 +263,9 @@ namespace WindowsFormsApp1
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
+            onm = false;
+            ons = true;
+            onh = false;
             label1.Text = "None";
             label4.Text = "None";
             label5.Text = "None";
@@ -273,7 +280,17 @@ namespace WindowsFormsApp1
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-            setTable();
+            string user = Form1.user;
+            onm = true;
+            ons = false;
+            onh = false;
+            setTable(user);
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            HomePage.settings.Show();
         }
 
         private bool OpenConnection()

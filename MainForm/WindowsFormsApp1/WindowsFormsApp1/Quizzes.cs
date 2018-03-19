@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Diagnostics;
 namespace WindowsFormsApp1
 {
     public partial class Quizzes : Form
@@ -254,8 +254,11 @@ namespace WindowsFormsApp1
 
         private void bunifuThinButton21_Click(object sender, EventArgs e)
         {
+            panel3.Hide();
+            bunifuGradientPanel1.Hide();
             this.Hide();
             Form1.questionspage.Show();
+            HomePage.ids.controls.stop();
         }
 
         private void bunifuThinButton22_Click(object sender, EventArgs e)
@@ -269,10 +272,22 @@ namespace WindowsFormsApp1
             HomePage.stats.Show();
         }
 
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            HomePage.settings.Show();
+        }
+
         private void label2_Click(object sender, EventArgs e)
     {
-            this.Close();
-    }
+            var current = Process.GetCurrentProcess();
+            Process.GetProcessesByName(current.ProcessName)
+                .Where(t => t.Id != current.Id)
+                .ToList()
+                .ForEach(t => t.Kill());
+
+            current.Kill();
+        }
 
 
     

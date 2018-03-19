@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,8 +14,10 @@ namespace WindowsFormsApp1
 
     public partial class HomePage : Form
     {
+        public static WMPLib.WindowsMediaPlayer ids;
         public static bool load = false;
         public static string user;
+        public static Settings settings = new Settings();
         public static StatsPage stats = new StatsPage();
         public static Quizzes quizpage = new Quizzes();
         public HomePage()
@@ -139,6 +142,12 @@ namespace WindowsFormsApp1
 
         private void HomePage_Load(object sender, EventArgs e)
         {
+
+            ids = new WMPLib.WindowsMediaPlayer();
+            ids.URL = @"C:\Users\IcyCream\Documents\GitHub\Quiz_Program\Audio Files\I_Don_t_See_the_Branches_I_See_the_Leaves.mp3";
+            ids.settings.setMode("Loop", true);
+            ids.settings.volume = settings.bunifuSlider1.Value;
+            ids.controls.play();
             user = Form1.user;
             welcomeText.AutoSize = false;
             welcomeText.Text = $"Welcome, {user}";
@@ -172,10 +181,11 @@ namespace WindowsFormsApp1
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-            load = true;
-            Form1.homepage.Hide();
-            Form1.questionspage.Show();
             panel4.Visible = false;
+            ids.controls.stop();
+            load = true;
+            Form1.questionspage.Show();
+            Form1.homepage.Hide();
         }
 
         private void bunifuFlatButton4_Click(object sender, EventArgs e)
@@ -185,13 +195,26 @@ namespace WindowsFormsApp1
 
         private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            quizpage.Show();
+        }
 
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            settings.Show();
         }
 
         private void label2_Click(object sender, EventArgs e)
     {
-            this.Close();
-    }
+            var current = Process.GetCurrentProcess();
+            Process.GetProcessesByName(current.ProcessName)
+                .Where(t => t.Id != current.Id)
+                .ToList()
+                .ForEach(t => t.Kill());
+
+            current.Kill();
+        }
 
 
     

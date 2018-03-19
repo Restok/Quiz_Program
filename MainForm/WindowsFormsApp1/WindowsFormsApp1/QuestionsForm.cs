@@ -10,10 +10,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using AnimatorNS;
+using WMPLib;
+using System.Diagnostics;
+
 namespace WindowsFormsApp1
 {
     public partial class QuestionsForm : Form
     {
+        public static bool hassave = false;
+        public static WMPLib.WindowsMediaPlayer sp;
+        int interval;
         bool hardmode = false;
         double cur_percent;
         string choiceA;
@@ -78,20 +84,25 @@ namespace WindowsFormsApp1
 
         }
 
-/*        private void hover1_MouseHover(object sender, EventArgs e)
-        {
-            MessageBox.Show("Hovering!");
-        }
-*/
-        
+        /*        private void hover1_MouseHover(object sender, EventArgs e)
+                {
+                    MessageBox.Show("Hovering!");
+                }
+        */
+
 
         private void label2_Click(object sender, EventArgs e)
-    {
-            this.Close();
-    }
+        {
+            var current = Process.GetCurrentProcess();
+            Process.GetProcessesByName(current.ProcessName)
+                .Where(t => t.Id != current.Id)
+                .ToList()
+                .ForEach(t => t.Kill());
 
+            current.Kill();
+        }
 
-        private void getAnswerChoices(string question)
+            private void getAnswerChoices(string question)
         {
 
         }
@@ -169,11 +180,46 @@ namespace WindowsFormsApp1
         }
         private void QuestionsForm_Load(object sender, EventArgs e)
         {
+            this.BackgroundImageLayout = ImageLayout.Zoom;
+            sp = new WindowsMediaPlayer();
+            sp.URL = @"C:\Users\IcyCream\Documents\GitHub\Quiz_Program\Audio Files\Bovi.mp3";
+            sp.settings.setMode("Loop", true);
+            sp.settings.volume = HomePage.settings.bunifuSlider1.Value;
+            sp.controls.play();
+            int selectedin = HomePage.settings.bunifuDropdown1.selectedIndex;
+            if (selectedin == 0){
+                interval = 500;
+            }
+            else if(selectedin == 1)
+            {
+                interval = 1000;
+            }
+            else if(selectedin == 2)
+            {
+                interval = 2000;
+            }
+            else if(selectedin == 3)
+            {
+                interval = 3000;
+            }
+            else if(selectedin == 4)
+            {
+                interval = 4000;
+            }
+            timer1.Interval = interval;
+            timer2.Interval = interval;
+            timer3.Interval = interval;
             totalQuestionNumber = 15;
             if (HomePage.load == true)
             {
                 HomePage.load = false;
                 load_save();
+                if(currentQuestion == null)
+                {
+                    Form1.questionspage.Hide();
+                    Form1.homepage.Show();
+                    MessageBox.Show("No saved data found!");
+                }
                 questionBox.Text = currentQuestion;
                 getQuestionBank(Subject, Details);
                 setLabels();
@@ -210,7 +256,7 @@ namespace WindowsFormsApp1
                     }
                     else
                     {
-                        bunifuTransition1.Show(pictureBox2);
+                        bunifuTransition1.ShowSync(pictureBox2);
                         timer3.Start();
                         correctCount += 1;
                     }
@@ -238,7 +284,7 @@ namespace WindowsFormsApp1
                 }
                 else
                 {
-                    bunifuTransition1.Show(pictureBox2);
+                    bunifuTransition1.ShowSync(pictureBox2);
                     timer3.Start();
                     correctCount += 1;
                 }
@@ -246,19 +292,23 @@ namespace WindowsFormsApp1
                 questionBox.Text = getQuestion();
                 setLabels();
                 deleteSave();
-                MessageBox.Show("Quiz End!");
-                this.Hide();
+                hassave = false;
+                MessageBox.Show($"Quiz End! You got a total of {percentage.Text}");
                 Form1.homepage.Show();
+                sp.controls.stop();
+                HomePage.ids.controls.play();
                 hardmode = false;
+                this.Close();
 
             }
-            if(currentQuestionNumber == 6 && percentage.Text == "100%")
+            if(HomePage.settings.bunifuCheckbox1.Checked = true && currentQuestionNumber == 6 && percentage.Text == "100%")
             {
                 panel9.Visible = true;
             }
         }
         private void pause()
         {
+            hassave = true;
             conn.Close();
             if (OpenConnection())
             {
@@ -411,9 +461,11 @@ namespace WindowsFormsApp1
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
+            sp.controls.stop();
             pause();
             Form1.questionspage.Hide();
             Form1.homepage.Show();
+            HomePage.ids.controls.play();
             panel5.Visible = false;
         }
 
@@ -424,8 +476,10 @@ namespace WindowsFormsApp1
 
         private void bunifuFlatButton5_Click(object sender, EventArgs e)
         {
+            sp.controls.stop();
             panel4.Visible = false;
             Form1.questionspage.Hide();
+            HomePage.ids.controls.play();
             Form1.homepage.Show();
 
         }
@@ -458,6 +512,9 @@ namespace WindowsFormsApp1
             label3.Visible = false;
             label2.Visible = false;
             panel9.Visible = false;
+            sp.controls.stop();
+            sp.URL = @"C:\Users\IcyCream\Documents\GitHub\Quiz_Program\Audio Files\Thomas The Tank Engine [EarRape].mp3";
+            sp.controls.play();
         }
 
         private void bunifuFlatButton10_Click(object sender, EventArgs e)
@@ -467,6 +524,7 @@ namespace WindowsFormsApp1
             getQuestionBank("Insane", "No Details");
             questionBox.Text = getQuestion();
             setLabels();
+            pictureBox1.Visible = true;
             questionBox.BackColor = Color.DarkRed;
             button1.BackColor = Color.DarkRed;
             button2.BackColor = Color.DarkRed;
@@ -477,6 +535,9 @@ namespace WindowsFormsApp1
             label3.Visible = false;
             label2.Visible = false;
             panel9.Visible = false;
+            sp.controls.stop();
+            sp.URL = @"C:\Users\IcyCream\Documents\GitHub\Quiz_Program\Audio Files\Thomas The Tank Engine [EarRape].mp3";
+            sp.controls.play();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -495,6 +556,11 @@ namespace WindowsFormsApp1
         {
             bunifuTransition1.HideSync(pictureBox2);
             timer3.Stop();
+        }
+
+        private void bunifuImageButton2_Click(object sender, EventArgs e)
+        {
+            panel4.Show();
         }
 
         private bool OpenConnection()

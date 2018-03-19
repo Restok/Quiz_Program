@@ -71,3 +71,9 @@ C:\Users\IcyCream\Documents\GitHub\Quiz_Program\MainForm\WindowsFormsApp1\Window
 C:\Users\IcyCream\Documents\GitHub\Quiz_Program\MainForm\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
 C:\Users\IcyCream\Documents\GitHub\Quiz_Program\MainForm\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\MySql.Data.xml
 C:\Users\IcyCream\Documents\GitHub\Quiz_Program\MainForm\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form2.resources
+C:\Users\IcyCream\Documents\GitHub\Quiz_Program\MainForm\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Settings.resources
+C:\Users\IcyCream\Documents\GitHub\Quiz_Program\MainForm\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Interop.WMPLib.dll
+C:\Users\IcyCream\Documents\GitHub\Quiz_Program\MainForm\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\IcyCream\Documents\GitHub\Quiz_Program\MainForm\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.ResolveComReference.cache
+C:\Users\IcyCream\Documents\GitHub\Quiz_Program\MainForm\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Interop.WMPLib.dll
+C:\Users\IcyCream\Documents\GitHub\Quiz_Program\MainForm\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\AxInterop.WMPLib.dll

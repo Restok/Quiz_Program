@@ -8,10 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using WMPLib;
+using AesEncDec;
+using System.IO;
 namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+        WMPLib.WindowsMediaPlayer wplayer;
         private MySqlConnection conn;
         SignUp SignUpBox = new SignUp();
         public static HomePage homepage = new HomePage();
@@ -105,13 +109,14 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            user = textBox1.Text;
-            string pass = textBox2.Text;
+            user = bunifuCustomTextbox1.Text;
+            string pass = bunifuCustomTextbox2.Text;
+            pass = Aescryp.Encrypt(pass);
             if (IsLogin(user, pass))
             {
                 incorrectLabel.Visible = false;
-
                 homepage.Show();
+                wplayer.controls.stop();
                 this.Hide();
             }
             else
@@ -120,13 +125,41 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            textBox2.PasswordChar = '*';
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
+            wplayer = new WMPLib.WindowsMediaPlayer();
+            wplayer.URL = @"C:\Users\IcyCream\Documents\GitHub\Quiz_Program\Audio Files\Brittle_Rille_Reunited.mp3";
+            wplayer.settings.setMode("Loop", true);
+            wplayer.controls.play();
+            wplayer.settings.volume = bunifuSlider1.Value;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void bunifuSlider1_ValueChanged(object sender, EventArgs e)
+        {
+            wplayer.settings.volume = bunifuSlider1.Value;
+        }
+
+        private void bunifuCustomTextbox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void bunifuCustomTextbox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
         }
 
         private bool OpenConnection()

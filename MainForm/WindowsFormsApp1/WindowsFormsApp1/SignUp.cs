@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+
+using AesEncDec;
+using System.IO;
+
 namespace WindowsFormsApp1
 {
 
@@ -76,20 +80,30 @@ namespace WindowsFormsApp1
 
             if (userNameText == "" || passwordText == "" || gmailText == "")
             {
-                warning.Visible = true;
-                Success.Visible = false;
+
+                    warning.Visible = true;
+                    Success.Visible = false;
             }
             else
             {
-                warning.Visible = false;
-                Success.Visible = true;
-                if (Register(userNameText, passwordText, gmailText))
+                if (userNameText.Length < 25)
                 {
-                    MessageBox.Show($"User {userNameText} has been created");
+                    warning.Visible = false;
+                    Success.Visible = true;
+                    string encpass = Aescryp.Encrypt(passwordText);
+                    if (Register(userNameText, encpass, gmailText))
+                    {
+                        MessageBox.Show($"User {userNameText} has been created");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show($"User not created!");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show($"User not created!");
+                    MessageBox.Show("Username too long!");
                 }
 
 
