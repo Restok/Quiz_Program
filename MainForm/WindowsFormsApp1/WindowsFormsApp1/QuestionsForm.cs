@@ -182,7 +182,7 @@ namespace WindowsFormsApp1
         {
             this.BackgroundImageLayout = ImageLayout.Zoom;
             sp = new WindowsMediaPlayer();
-            sp.URL = @"Audio Files\Bovi.mp3";
+            sp.URL = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),@"Audio Files\Bovi.mp3";
             sp.settings.setMode("Loop", true);
             sp.settings.volume = HomePage.settings.bunifuSlider1.Value;
             sp.controls.play();
@@ -513,7 +513,7 @@ namespace WindowsFormsApp1
             label2.Visible = false;
             panel9.Visible = false;
             sp.controls.stop();
-            sp.URL = @"Audio Files\Thomas The Tank Engine [EarRape].mp3";
+            sp.URL = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),@"Audio Files\Thomas The Tank Engine [EarRape].mp3";
             sp.controls.play();
         }
 
