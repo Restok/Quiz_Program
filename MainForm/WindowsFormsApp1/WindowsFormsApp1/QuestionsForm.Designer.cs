@@ -784,7 +784,7 @@
             this.panel9.Controls.Add(this.bunifuFlatButton10);
             this.panel9.Controls.Add(this.panel10);
             this.bunifuTransition1.SetDecoration(this.panel9, BunifuAnimatorNS.DecorationType.None);
-            this.panel9.Location = new System.Drawing.Point(0, 0);
+            this.panel9.Location = new System.Drawing.Point(21, 0);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(1280, 720);
             this.panel9.TabIndex = 19;
