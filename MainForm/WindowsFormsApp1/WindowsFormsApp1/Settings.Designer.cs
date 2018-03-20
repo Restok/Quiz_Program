@@ -67,11 +67,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("DILOVE", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label3.Location = new System.Drawing.Point(1173, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(22, 29);
+            this.label3.Size = new System.Drawing.Size(34, 32);
             this.label3.TabIndex = 3;
             this.label3.Text = "-";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -80,11 +80,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("DILOVE", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label2.Location = new System.Drawing.Point(1213, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 29);
+            this.label2.Size = new System.Drawing.Size(31, 32);
             this.label2.TabIndex = 1;
             this.label2.Text = "X";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -229,9 +229,9 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.bunifuSlider1);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(148, 164);
+            this.panel2.Location = new System.Drawing.Point(151, 160);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(984, 426);
+            this.panel2.Size = new System.Drawing.Size(978, 426);
             this.panel2.TabIndex = 12;
             // 
             // bunifuDropdown1
@@ -245,7 +245,7 @@
         "2 Seconds",
         "3 Seconds",
         "4 seconds"};
-            this.bunifuDropdown1.Location = new System.Drawing.Point(490, 290);
+            this.bunifuDropdown1.Location = new System.Drawing.Point(479, 311);
             this.bunifuDropdown1.Name = "bunifuDropdown1";
             this.bunifuDropdown1.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.bunifuDropdown1.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -256,11 +256,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Neo Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.AliceBlue;
-            this.label5.Location = new System.Drawing.Point(184, 289);
+            this.label5.Location = new System.Drawing.Point(191, 311);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(297, 25);
+            this.label5.Size = new System.Drawing.Size(282, 26);
             this.label5.TabIndex = 4;
             this.label5.Text = "Correct/Incorrect display time:";
             // 
@@ -271,7 +271,7 @@
             this.bunifuCheckbox1.Checked = true;
             this.bunifuCheckbox1.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.bunifuCheckbox1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox1.Location = new System.Drawing.Point(374, 180);
+            this.bunifuCheckbox1.Location = new System.Drawing.Point(383, 202);
             this.bunifuCheckbox1.Name = "bunifuCheckbox1";
             this.bunifuCheckbox1.Size = new System.Drawing.Size(20, 20);
             this.bunifuCheckbox1.TabIndex = 3;
@@ -280,11 +280,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Neo Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.AliceBlue;
-            this.label4.Location = new System.Drawing.Point(184, 175);
+            this.label4.Location = new System.Drawing.Point(193, 197);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(184, 25);
+            this.label4.Size = new System.Drawing.Size(176, 26);
             this.label4.TabIndex = 2;
             this.label4.Text = "Hardmode trigger:";
             // 
@@ -294,7 +294,7 @@
             this.bunifuSlider1.BackgroudColor = System.Drawing.Color.DarkGray;
             this.bunifuSlider1.BorderRadius = 0;
             this.bunifuSlider1.IndicatorColor = System.Drawing.Color.SeaGreen;
-            this.bunifuSlider1.Location = new System.Drawing.Point(349, 69);
+            this.bunifuSlider1.Location = new System.Drawing.Point(338, 90);
             this.bunifuSlider1.MaximumValue = 100;
             this.bunifuSlider1.Name = "bunifuSlider1";
             this.bunifuSlider1.Size = new System.Drawing.Size(452, 30);
@@ -305,11 +305,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Neo Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.AliceBlue;
-            this.label1.Location = new System.Drawing.Point(184, 71);
+            this.label1.Location = new System.Drawing.Point(189, 90);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(153, 25);
+            this.label1.Size = new System.Drawing.Size(143, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Music Volume:";
             // 
@@ -341,6 +341,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Settings";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Settings_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();

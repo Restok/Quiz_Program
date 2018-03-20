@@ -80,11 +80,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("DILOVE", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label3.Location = new System.Drawing.Point(1173, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(22, 29);
+            this.label3.Size = new System.Drawing.Size(34, 32);
             this.label3.TabIndex = 3;
             this.label3.Text = "-";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -93,11 +93,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("DILOVE", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label2.Location = new System.Drawing.Point(1213, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 29);
+            this.label2.Size = new System.Drawing.Size(31, 32);
             this.label2.TabIndex = 1;
             this.label2.Text = "X";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -241,7 +241,7 @@
             this.welcomeText.BackColor = System.Drawing.Color.Transparent;
             this.welcomeText.Font = new System.Drawing.Font("Neo Sans", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.welcomeText.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.welcomeText.Location = new System.Drawing.Point(12, 101);
+            this.welcomeText.Location = new System.Drawing.Point(12, 143);
             this.welcomeText.Name = "welcomeText";
             this.welcomeText.Size = new System.Drawing.Size(1280, 116);
             this.welcomeText.TabIndex = 13;
@@ -281,7 +281,7 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(57)))), ((int)(((byte)(60)))));
             this.panel2.Controls.Add(this.bunifuImageButton1);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(111, 256);
+            this.panel2.Location = new System.Drawing.Point(111, 277);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(489, 246);
             this.panel2.TabIndex = 16;
@@ -291,7 +291,7 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(57)))), ((int)(((byte)(60)))));
             this.panel3.Controls.Add(this.bunifuImageButton2);
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Location = new System.Drawing.Point(685, 256);
+            this.panel3.Location = new System.Drawing.Point(685, 277);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(483, 246);
             this.panel3.TabIndex = 17;
@@ -317,7 +317,7 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(57)))), ((int)(((byte)(60)))));
             this.label4.Font = new System.Drawing.Font("Neo Sans", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(134, 47);
+            this.label4.Location = new System.Drawing.Point(151, 35);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(228, 36);
             this.label4.TabIndex = 14;
@@ -491,11 +491,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Neo Sans", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Azure;
             this.label5.Location = new System.Drawing.Point(89, 27);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(286, 31);
+            this.label5.Size = new System.Drawing.Size(280, 33);
             this.label5.TabIndex = 0;
             this.label5.Text = "Load your saved quiz?";
             // 
@@ -536,6 +536,7 @@
             this.Name = "HomePage";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.HomePage_Load);
+            this.Shown += new System.EventHandler(this.HomePage_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();

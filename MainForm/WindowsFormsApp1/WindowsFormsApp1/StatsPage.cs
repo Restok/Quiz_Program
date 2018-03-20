@@ -190,18 +190,18 @@ namespace WindowsFormsApp1
         {
             this.Close();
         }
-        private void getStats(string us, string cate)
+        private void getStats(string us, string cate, Label perc)
         {
             if (OpenConnection())
             {
                 try
                 {
-                    string getuserstats = $"SELECT Addition FROM scores WHERE user = '{us}';";
+                    string getuserstats = $"SELECT {cate} FROM scores WHERE user = '{us}';";
                     MySqlCommand cmd = new MySqlCommand(getuserstats, conn);
                     MySqlDataReader getscore = cmd.ExecuteReader();
                     while(getscore.Read())
                     {
-                        tempscore = getscore.GetString(0);
+                        perc.Text = getscore.GetString(0);
                     }
                     getscore.Close();
                     conn.Close();
@@ -231,16 +231,11 @@ namespace WindowsFormsApp1
             label7.Text = "Multiplication";
             label9.Text = "Division";
             label11.Text = "Exponents";
-            getStats(user, "Addition");
-            label4.Text = tempscore;
-            getStats(user, "Subtraction");
-            label6.Text = tempscore;
-            getStats(user, "Multiplication");
-            label8.Text = tempscore;
-            getStats(user, "Division");
-            label10.Text = tempscore;
-            getStats(user, "Powers");
-            label12.Text = tempscore;
+            getStats(user, "Addition", label4);
+            getStats(user, "Subtraction", label6);
+            getStats(user, "Multiplication", label8);
+            getStats(user, "Division", label10);
+            getStats(user, "Powers",label12);
             checkNull(label4);
             checkNull(label6);
             checkNull(label8);
@@ -249,6 +244,8 @@ namespace WindowsFormsApp1
         }
         private void StatsPage_Load(object sender, EventArgs e)
         {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             string user = HomePage.user;
             setTable(user);
         }

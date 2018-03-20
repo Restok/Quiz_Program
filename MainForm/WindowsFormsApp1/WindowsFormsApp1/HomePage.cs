@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WMPLib;
+using System.IO;
+using System.Reflection;
 
 namespace WindowsFormsApp1
 {
@@ -142,9 +145,10 @@ namespace WindowsFormsApp1
 
         private void HomePage_Load(object sender, EventArgs e)
         {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 
             ids = new WMPLib.WindowsMediaPlayer();
-            ids.URL = @"Audio Files\I_Don_t_See_the_Branches_I_See_the_Leaves.mp3";
+            ids.URL = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Audio Files\I_Don_t_See_the_Branches_I_See_the_Leaves.mp3");
             ids.settings.setMode("Loop", true);
             ids.settings.volume = settings.bunifuSlider1.Value;
             ids.controls.play();
@@ -182,10 +186,22 @@ namespace WindowsFormsApp1
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
             panel4.Visible = false;
-            ids.controls.stop();
-            load = true;
-            Form1.questionspage.Show();
-            Form1.homepage.Hide();
+            try
+            {
+                ids.controls.stop();
+                load = true;
+                Form1.questionspage = new QuestionsForm();
+                Form1.questionspage.Show();
+                Form1.homepage.Hide();
+            }
+            catch
+            {
+                load = false;
+                MessageBox.Show("No save data found!");
+                Form1.questionspage.Close();
+                Form1.questionspage = new QuestionsForm();
+                ids.controls.play();
+            }
         }
 
         private void bunifuFlatButton4_Click(object sender, EventArgs e)
@@ -203,6 +219,11 @@ namespace WindowsFormsApp1
         {
             this.Hide();
             settings.Show();
+        }
+
+        private void HomePage_Shown(object sender, EventArgs e)
+        {
+            Form1.questionspage.Close();
         }
 
         private void label2_Click(object sender, EventArgs e)

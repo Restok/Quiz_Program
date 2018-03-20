@@ -126,6 +126,7 @@ namespace WindowsFormsApp1
 
         private void SignUp_Load(object sender, EventArgs e)
         {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 
         }
     }

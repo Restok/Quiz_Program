@@ -242,6 +242,7 @@ namespace WindowsFormsApp1
         {
             QuestionsForm.Subject = "Math";
             QuestionsForm.Details = "Division";
+
             bunifuTransition5.ShowSync(bunifuGradientPanel1);
         }
 
@@ -257,6 +258,7 @@ namespace WindowsFormsApp1
             panel3.Hide();
             bunifuGradientPanel1.Hide();
             this.Hide();
+            Form1.questionspage = new QuestionsForm();
             Form1.questionspage.Show();
             HomePage.ids.controls.stop();
         }
@@ -276,6 +278,12 @@ namespace WindowsFormsApp1
         {
             this.Hide();
             HomePage.settings.Show();
+        }
+
+        private void Quizzes_Load(object sender, EventArgs e)
+        {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
         }
 
         private void label2_Click(object sender, EventArgs e)

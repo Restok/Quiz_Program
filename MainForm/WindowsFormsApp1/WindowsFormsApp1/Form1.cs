@@ -11,6 +11,8 @@ using MySql.Data.MySqlClient;
 using WMPLib;
 using AesEncDec;
 using System.IO;
+using System.Reflection;
+
 namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
@@ -127,8 +129,10 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             wplayer = new WMPLib.WindowsMediaPlayer();
-            wplayer.URL = @"Audio Files\Brittle_Rille_Reunited.mp3";
+            wplayer.URL = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Audio Files\Brittle_Rille_Reunited.mp3");
             wplayer.settings.setMode("Loop", true);
             wplayer.controls.play();
             wplayer.settings.volume = bunifuSlider1.Value;

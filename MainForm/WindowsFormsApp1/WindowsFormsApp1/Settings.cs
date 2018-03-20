@@ -180,6 +180,12 @@ namespace WindowsFormsApp1
             this.Hide();
         }
 
+        private void Settings_Load(object sender, EventArgs e)
+        {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
+        }
+
         private void label2_Click(object sender, EventArgs e)
     {
             var current = Process.GetCurrentProcess();

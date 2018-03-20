@@ -52,10 +52,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label2.Font = new System.Drawing.Font("DILOVE", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(1213, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 29);
+            this.label2.Size = new System.Drawing.Size(31, 32);
             this.label2.TabIndex = 1;
             this.label2.Text = "X";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -63,11 +64,12 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1146, 16);
+            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label3.Font = new System.Drawing.Font("DILOVE", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(1163, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(22, 29);
-            this.label3.TabIndex = 3;
+            this.label3.Size = new System.Drawing.Size(34, 32);
+            this.label3.TabIndex = 1;
             this.label3.Text = "-";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
@@ -79,7 +81,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1280, 99);
-            this.panel1.TabIndex = 2;
+            this.panel1.TabIndex = 5;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
@@ -89,22 +91,22 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Neo Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(472, 452);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 24);
-            this.label1.TabIndex = 4;
+            this.label1.Size = new System.Drawing.Size(99, 24);
+            this.label1.TabIndex = 6;
             this.label1.Text = "Username:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Neo Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(472, 505);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 24);
-            this.label4.TabIndex = 6;
+            this.label4.Size = new System.Drawing.Size(95, 24);
+            this.label4.TabIndex = 3;
             this.label4.Text = "Password:";
             // 
             // signUp
@@ -120,7 +122,7 @@
             this.signUp.Margin = new System.Windows.Forms.Padding(0);
             this.signUp.Name = "signUp";
             this.signUp.Size = new System.Drawing.Size(157, 35);
-            this.signUp.TabIndex = 7;
+            this.signUp.TabIndex = 1;
             this.signUp.Text = "Sign Up";
             this.signUp.UseVisualStyleBackColor = false;
             this.signUp.Click += new System.EventHandler(this.signUp_Click);
@@ -138,7 +140,7 @@
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(157, 35);
-            this.button1.TabIndex = 8;
+            this.button1.TabIndex = 2;
             this.button1.Text = "Login";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -146,11 +148,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Neo Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(469, 279);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(352, 21);
-            this.label5.TabIndex = 9;
+            this.label5.Size = new System.Drawing.Size(353, 20);
+            this.label5.TabIndex = 8;
             this.label5.Text = "The most normal quiz program you will ever find.";
             // 
             // panel2
@@ -161,7 +163,7 @@
             this.panel2.Location = new System.Drawing.Point(435, 409);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(418, 222);
-            this.panel2.TabIndex = 10;
+            this.panel2.TabIndex = 0;
             // 
             // bunifuCustomTextbox1
             // 
@@ -177,7 +179,7 @@
             this.bunifuCustomTextbox1.Multiline = true;
             this.bunifuCustomTextbox1.Name = "bunifuCustomTextbox1";
             this.bunifuCustomTextbox1.Size = new System.Drawing.Size(225, 35);
-            this.bunifuCustomTextbox1.TabIndex = 8;
+            this.bunifuCustomTextbox1.TabIndex = 0;
             this.bunifuCustomTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.bunifuCustomTextbox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.bunifuCustomTextbox1_KeyDown);
             // 
@@ -195,19 +197,19 @@
             this.bunifuCustomTextbox2.Name = "bunifuCustomTextbox2";
             this.bunifuCustomTextbox2.PasswordChar = '*';
             this.bunifuCustomTextbox2.Size = new System.Drawing.Size(225, 35);
-            this.bunifuCustomTextbox2.TabIndex = 7;
+            this.bunifuCustomTextbox2.TabIndex = 1;
             this.bunifuCustomTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.bunifuCustomTextbox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.bunifuCustomTextbox2_KeyDown);
             // 
             // incorrectLabel
             // 
             this.incorrectLabel.AutoSize = true;
-            this.incorrectLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.incorrectLabel.Font = new System.Drawing.Font("Neo Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.incorrectLabel.ForeColor = System.Drawing.Color.Red;
-            this.incorrectLabel.Location = new System.Drawing.Point(479, 374);
+            this.incorrectLabel.Location = new System.Drawing.Point(491, 380);
             this.incorrectLabel.Name = "incorrectLabel";
-            this.incorrectLabel.Size = new System.Drawing.Size(325, 25);
-            this.incorrectLabel.TabIndex = 11;
+            this.incorrectLabel.Size = new System.Drawing.Size(308, 26);
+            this.incorrectLabel.TabIndex = 7;
             this.incorrectLabel.Text = "Incorrect username or password!";
             this.incorrectLabel.Visible = false;
             // 
@@ -221,18 +223,18 @@
             this.bunifuSlider1.MaximumValue = 100;
             this.bunifuSlider1.Name = "bunifuSlider1";
             this.bunifuSlider1.Size = new System.Drawing.Size(292, 30);
-            this.bunifuSlider1.TabIndex = 12;
+            this.bunifuSlider1.TabIndex = 5;
             this.bunifuSlider1.Value = 25;
             this.bunifuSlider1.ValueChanged += new System.EventHandler(this.bunifuSlider1_ValueChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Neo Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(431, 654);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(136, 24);
-            this.label6.TabIndex = 13;
+            this.label6.Size = new System.Drawing.Size(130, 24);
+            this.label6.TabIndex = 4;
             this.label6.Text = "Music Volume:";
             // 
             // bunifuElipse1
@@ -260,7 +262,6 @@
             this.Controls.Add(this.panel2);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);

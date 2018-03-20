@@ -12,7 +12,9 @@ using MySql.Data.MySqlClient;
 using AnimatorNS;
 using WMPLib;
 using System.Diagnostics;
-
+using System.IO;
+using System.Reflection;
+using System.Net.Mail;
 namespace WindowsFormsApp1
 {
     public partial class QuestionsForm : Form
@@ -49,7 +51,24 @@ namespace WindowsFormsApp1
             conn = new MySqlConnection(connString);
             InitializeComponent();
         }
+    protected void sendEmail(string address)
+        {
+            string user = Form1.user;
+            MailMessage mailMsg = new MailMessage();
+            mailMsg.To.Add(address);
+            MailAddress mailAddress = new MailAddress("tore.automatedmessenger@gmail.com");
+            mailMsg.From = mailAddress;
 
+            mailMsg.Subject = $"{user}'s Score on Tore";
+            mailMsg.Body = $"{user} scored {percentage.Text} in category {Subject}, subcategory {Details}.";
+
+            SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
+            smtpClient.EnableSsl = true;
+            System.Net.NetworkCredential credentials = new System.Net.NetworkCredential("tore.automatedmessenger@gmail.com", "c-production");
+            smtpClient.UseDefaultCredentials = false;
+            smtpClient.Credentials = credentials;
+            smtpClient.Send(mailMsg);
+        }
     int mouseX = 0, mouseY = 0;
     bool mouseDown;
 
@@ -180,9 +199,12 @@ namespace WindowsFormsApp1
         }
         private void QuestionsForm_Load(object sender, EventArgs e)
         {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
             this.BackgroundImageLayout = ImageLayout.Zoom;
             sp = new WindowsMediaPlayer();
-            sp.URL = @"Audio Files\Bovi.mp3";
+            string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Audio Files\bovi.mp3");
+            sp.URL = path;
             sp.settings.setMode("Loop", true);
             sp.settings.volume = HomePage.settings.bunifuSlider1.Value;
             sp.controls.play();
@@ -214,12 +236,6 @@ namespace WindowsFormsApp1
             {
                 HomePage.load = false;
                 load_save();
-                if(currentQuestion == null)
-                {
-                    Form1.questionspage.Hide();
-                    Form1.homepage.Show();
-                    MessageBox.Show("No saved data found!");
-                }
                 questionBox.Text = currentQuestion;
                 getQuestionBank(Subject, Details);
                 setLabels();
@@ -236,10 +252,14 @@ namespace WindowsFormsApp1
         }
         private void deleteSave()
         {
+            conn.Close();
             if (OpenConnection())
             {
                 string currentUser = Form1.user;
-                string delete = $"DELETE FROM saveslot WHERE USER = {currentUser}";
+                string delete = $"DELETE FROM saveslot WHERE USER = '{currentUser}'";
+                MySqlCommand deletesave = new MySqlCommand(delete, conn);
+                deletesave.ExecuteNonQuery();
+                conn.Close();
             }
         }
         private void checkCorrect(Button chosen) {
@@ -291,14 +311,13 @@ namespace WindowsFormsApp1
                 setQuestionValues();
                 questionBox.Text = getQuestion();
                 setLabels();
+                recordScore();
                 deleteSave();
                 hassave = false;
-                MessageBox.Show($"Quiz End! You got a total of {percentage.Text}");
-                Form1.homepage.Show();
-                sp.controls.stop();
-                HomePage.ids.controls.play();
-                hardmode = false;
-                this.Close();
+                panel11.Visible = true;
+                panel9.Visible = true;
+                label7.Text = ($"Quiz End! You got a total of {percentage.Text}. Email results to instructor?");
+
 
             }
             if(HomePage.settings.bunifuCheckbox1.Checked = true && currentQuestionNumber == 6 && percentage.Text == "100%")
@@ -355,6 +374,7 @@ namespace WindowsFormsApp1
         }
         private void recordScore()
         {
+            conn.Close();
             if (OpenConnection())
             {
                 string curscore = percentage.Text; 
@@ -363,19 +383,24 @@ namespace WindowsFormsApp1
                 string query = $"INSERT INTO scores (id, user, {Details}) VALUES ('', '{currentUser}', '{curscore}')";
                 string update = $"UPDATE scores SET {Details} = '{curscore}' WHERE user = '{currentUser}'";
                 MySqlCommand checkex = new MySqlCommand(checkExisting, conn);
-                try
+                MySqlDataReader excheck = checkex.ExecuteReader();
+                if(excheck.Read())
                 {
-                    MySqlDataReader excheck = checkex.ExecuteReader();
                     conn.Close();
                     conn.Open();
                     MySqlCommand up = new MySqlCommand(update, conn);
                     up.ExecuteNonQuery();
+                    conn.Close();
+                    excheck.Close();
                 }
-                catch(MySqlException ex)
+                else
                 {
+
                     MySqlCommand insertScore = new MySqlCommand(query, conn);
                     try
                     {
+                        conn.Close();
+                        conn.Open();
                         insertScore.ExecuteNonQuery();
                     }
                     catch (Exception x)
@@ -383,7 +408,7 @@ namespace WindowsFormsApp1
                         MessageBox.Show("error running query" + x);
                     }
                     
-                    MessageBox.Show("error!" + ex);
+
                 }
                 conn.Close();
             }
@@ -465,6 +490,7 @@ namespace WindowsFormsApp1
             pause();
             Form1.questionspage.Hide();
             Form1.homepage.Show();
+            sp.controls.stop();
             HomePage.ids.controls.play();
             panel5.Visible = false;
         }
@@ -478,9 +504,11 @@ namespace WindowsFormsApp1
         {
             sp.controls.stop();
             panel4.Visible = false;
-            Form1.questionspage.Hide();
             HomePage.ids.controls.play();
             Form1.homepage.Show();
+            this.Hide();
+            //if (Form1.questionspage == null)
+            //    throw new ArgumentNullException("Form1.questionspage");
 
         }
 
@@ -513,7 +541,9 @@ namespace WindowsFormsApp1
             label2.Visible = false;
             panel9.Visible = false;
             sp.controls.stop();
-            sp.URL = @"Audio Files\Thomas The Tank Engine [EarRape].mp3";
+            
+            string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Audio Files\Thomas The Tank Engine [EarRape].mp3");
+            sp.URL = path;
             sp.controls.play();
         }
 
@@ -561,6 +591,34 @@ namespace WindowsFormsApp1
         private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
             panel4.Show();
+        }
+
+        private void bunifuFlatButton11_Click(object sender, EventArgs e)
+        {
+            panel13.Visible = true;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            sendEmail(textBox1.Text);
+            panel9.Visible = false;
+            panel11.Visible = false;
+            panel13.Visible = false;
+            sp.controls.stop();
+            this.Hide();
+            HomePage.ids.controls.play();
+            Form1.homepage.Show();
+        }
+
+        private void bunifuFlatButton12_Click(object sender, EventArgs e)
+        {
+            panel9.Visible = false;
+            panel11.Visible = false;
+            Form1.homepage.Show();
+            sp.controls.stop();
+            HomePage.ids.controls.play();
+            hardmode = false;
+            this.Hide();
         }
 
         private bool OpenConnection()
