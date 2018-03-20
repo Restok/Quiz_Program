@@ -148,7 +148,11 @@ namespace WindowsFormsApp1
             this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 
             ids = new WMPLib.WindowsMediaPlayer();
+<<<<<<< HEAD
             ids.URL = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Audio Files\I_Don_t_See_the_Branches_I_See_the_Leaves.mp3");
+=======
+            ids.URL = "Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Audio Files\I_Don_t_See_the_Branches_I_See_the_Leaves.mp3");
+>>>>>>> db623f87af6017b49da7bd37f8902f1058334580
             ids.settings.setMode("Loop", true);
             ids.settings.volume = settings.bunifuSlider1.Value;
             ids.controls.play();

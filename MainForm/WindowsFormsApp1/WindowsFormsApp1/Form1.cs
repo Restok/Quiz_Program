@@ -132,7 +132,11 @@ namespace WindowsFormsApp1
             this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 
             wplayer = new WMPLib.WindowsMediaPlayer();
+<<<<<<< HEAD
             wplayer.URL = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Audio Files\Brittle_Rille_Reunited.mp3");
+=======
+            wplayer.URL = @"..\\Tore\Audio Files\Brittle_Rille_Reunited.mp3";
+>>>>>>> db623f87af6017b49da7bd37f8902f1058334580
             wplayer.settings.setMode("Loop", true);
             wplayer.controls.play();
             wplayer.settings.volume = bunifuSlider1.Value;
